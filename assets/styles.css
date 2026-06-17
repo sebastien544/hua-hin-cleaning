@@ -127,8 +127,17 @@ a:focus-visible, .btn:focus-visible, button:focus-visible { outline-offset: 3px;
 .hero-trust .ico { width: 20px; height: 20px; color: var(--teal-500); }
 
 .hero-card {
+  position: relative;
   background: #fff; border-radius: var(--radius); box-shadow: var(--shadow);
   padding: 6px; border: 1px solid var(--line);
+}
+.hero-mascot {
+  position: absolute; top: 0; right: -14px; width: 130px; height: auto;
+  transform: translateY(-62%); pointer-events: none;
+  filter: drop-shadow(0 10px 16px rgba(6, 52, 58, .22));
+}
+@media (max-width: 920px) {
+  .hero-mascot { width: 96px; right: 2px; transform: translateY(-50%); }
 }
 .hero-card-inner { padding: 24px; }
 .hero-card h3 { font-size: 1.3rem; color: var(--teal-900); }
