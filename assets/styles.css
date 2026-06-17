@@ -165,11 +165,16 @@ textarea { resize: vertical; }
 /* ===== Badges ===== */
 .badges { background: var(--white); padding: 22px 0; }
 .badges-row {
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem 2.2rem;
-  color: var(--teal-700); font-weight: 600; font-size: .95rem;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: .8rem 1.6rem;
+  color: var(--teal-700); font-weight: 600; font-size: .92rem;
 }
-.badges-row span { display: inline-flex; align-items: center; gap: .55em; }
+.badges-row span { display: inline-flex; align-items: center; gap: .5em; white-space: nowrap; }
 .badges-row .ico { width: 19px; height: 19px; color: var(--teal-500); }
+/* Below the one-line threshold, cap the width so it wraps to balanced rows
+   instead of dropping a single badge onto its own line. */
+@media (max-width: 1160px) {
+  .badges-row { max-width: 680px; margin-left: auto; margin-right: auto; }
+}
 
 /* ===== Sections ===== */
 .section { padding: clamp(56px, 8vw, 96px) 0; }
