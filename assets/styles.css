@@ -251,6 +251,11 @@ textarea { resize: vertical; }
 .price h3 { font-size: 1.2rem; color: var(--teal-900); }
 .price-tag { font-size: 1.1rem; color: var(--muted); margin: .7rem 0 1.2rem; }
 .price-tag span { font-family: var(--font-display); font-size: 2.8rem; font-weight: 600; color: var(--teal-700); letter-spacing: -.01em; }
+.price-tag .price-from {
+  display: block; font-family: var(--font); font-size: .78rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: .07em; color: var(--muted);
+  margin-bottom: .2rem;
+}
 .price-tag small { font-size: .9rem; }
 .price ul { list-style: none; display: grid; gap: .65rem; margin-bottom: 1.6rem; }
 .price ul li { padding-left: 1.6rem; position: relative; color: var(--muted); font-size: .96rem; }
