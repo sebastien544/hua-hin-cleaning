@@ -314,7 +314,7 @@ textarea { resize: vertical; }
 .contact-list li { display: flex; align-items: center; gap: .8rem; color: var(--muted); }
 .contact-list .ico { width: 20px; height: 20px; color: var(--teal-500); }
 .contact-list a { color: var(--teal-700); font-weight: 600; }
-.contact-form { display: grid; gap: 1rem; }
+.contact-form { display: grid; gap: 1rem; scroll-margin-top: 88px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .form-note {
   background: var(--teal-50); border: 1px solid var(--teal-300); color: var(--teal-900);
@@ -364,7 +364,12 @@ textarea { resize: vertical; }
 .quick-call:hover { border-color: var(--teal-300); }
 
 /* Floating contact widget */
-.float-contact { position: fixed; right: 18px; bottom: 18px; z-index: 60; display: grid; justify-items: end; gap: .6rem; }
+.float-contact {
+  position: fixed; right: 18px; bottom: 18px; z-index: 60; display: grid; justify-items: end; gap: .6rem;
+  opacity: 0; visibility: hidden; transform: translateY(16px);
+  transition: opacity .25s ease, transform .25s ease, visibility .25s ease;
+}
+.float-contact.is-visible { opacity: 1; visibility: visible; transform: none; }
 .float-menu {
   display: grid; gap: .5rem; justify-items: end;
   opacity: 0; transform: translateY(12px) scale(.96); pointer-events: none;

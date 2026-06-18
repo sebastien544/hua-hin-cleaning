@@ -38,6 +38,21 @@
     });
   }
 
+  // Reveal the floating contact widget once the user scrolls past the hero
+  if (floatWrap) {
+    var showAfter = 260;
+    var syncFloat = function () {
+      var show = window.scrollY > showAfter;
+      floatWrap.classList.toggle('is-visible', show);
+      if (!show) {
+        floatWrap.classList.remove('open');
+        if (floatToggle) floatToggle.setAttribute('aria-expanded', 'false');
+      }
+    };
+    window.addEventListener('scroll', syncFloat, { passive: true });
+    syncFloat();
+  }
+
   // Reveal on scroll
   var revealTargets = document.querySelectorAll(
     '.section-head, .card, .why-copy, .why-stats .stat, .areas-list li, .contact-copy, .contact-form'
