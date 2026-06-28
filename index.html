@@ -4,7 +4,52 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sparkle Hua Hin — Professional Cleaning Services on the Gulf Coast</title>
-  <meta name="description" content="Trusted residential, condo, villa and commercial cleaning services in Hua Hin, Cha-Am, Pranburi and surrounding areas. Reliable teams speaking English, Thai, French & Chinese, eco-friendly products." />
+  <meta name="description" content="Condo & villa cleaning, property inspection, house watching and Airbnb support in Hua Hin, Cha-Am and Pranburi. Friendly teams speaking English, Thai, French & Chinese. Free quotes on WhatsApp." />
+  <style>
+    /* page-specific helpers (launch bar, pricing tabs) */
+    .promo-bar { background: linear-gradient(90deg, #ffb547, #f5a028); color: #06343a; text-align: center;
+      padding: 1rem 1.4rem; font-size: .92rem; font-weight: 600; line-height: 1.5; letter-spacing: .01em; }
+    .promo-bar strong { font-weight: 800; }
+    .promo-bar .amt { font-weight: 800; white-space: nowrap; margin: 0 .12em; letter-spacing: .02em; }
+    .promo-bar-sub { opacity: .8; white-space: nowrap; }
+    .coming-soon { display: inline-block; margin-left: .4rem; font-size: .66rem; font-weight: 800; letter-spacing: .04em;
+      text-transform: uppercase; color: var(--teal-700); background: var(--teal-50); border: 1px solid var(--teal-300);
+      padding: .15em .55em; border-radius: 999px; vertical-align: middle; }
+    .service.is-soon { opacity: .72; }
+    .rate-rows { list-style: none; display: grid; gap: .55rem; margin: .4rem 0 1.4rem; }
+    .price .rate-rows li { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline;
+      padding: 0 0 .55rem; border-bottom: 1px dashed var(--line); color: var(--teal-900); font-size: .98rem; }
+    .price .rate-rows li::before { content: none; }
+    .price .rate-rows li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .rate-rows .amt { font-family: var(--font-display); font-weight: 700; color: var(--teal-700); white-space: nowrap; }
+    .rate-rows .sz { color: var(--muted); font-size: .82rem; display: block; }
+    .incl-label { font-weight: 700; color: var(--teal-900); font-size: .88rem; margin: .2rem 0 .6rem; }
+    /* equal-height pricing cards (3 across, two rows) */
+    #pricing .pricing-grid { align-items: stretch; }
+    #pricing .price .btn { margin-top: auto; }
+    .price-group { font-family: var(--font-display); font-weight: 700; font-size: 1.18rem; color: var(--teal-900);
+      margin: 6px 0 16px; display: flex; align-items: center; gap: .6rem; }
+    .price-group::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+    .price-group.second { margin-top: 40px; }
+    .price .card-sz { color: var(--muted); font-size: .9rem; margin-top: -.35rem; }
+    .launch-line { color: var(--amber2, #f5a028); font-weight: 700; font-size: .9rem; margin: -.6rem 0 1rem; }
+    .launch-line s { color: var(--muted); font-weight: 500; }
+    /* pricing tabs */
+    .ptab-btns { display: inline-flex; gap: .3rem; padding: .35rem; margin: 0 auto 28px; background: #fff;
+      border: 1px solid var(--line); border-radius: 999px; box-shadow: var(--shadow-sm); }
+    .ptabs { text-align: center; }
+    .ptab-panel { text-align: left; }
+    .ptab-btn { border: 0; cursor: pointer; font-family: inherit; font-weight: 700; font-size: .95rem;
+      color: var(--teal-700); background: transparent; padding: .6em 1.3em; border-radius: 999px; transition: all .15s; }
+    .ptab-btn:hover { color: var(--teal-900); }
+    .ptab-btn.is-active { background: var(--teal-500); color: #fff; }
+    @media (max-width: 560px) { .ptab-btns { display: flex; width: 100%; } .ptab-btn { flex: 1; padding: .6em .4em; font-size: .85rem; } }
+    .group-note { color: var(--muted); font-size: .95rem; margin: 6px 0 0; }
+    .group-note a { color: var(--teal-700); font-weight: 600; }
+    .group-note .star { color: var(--teal-500); font-weight: 700; }
+    .launch-line.muted-note { color: var(--muted); font-weight: 500; }
+    .launch-line.muted-note a { color: var(--teal-700); font-weight: 600; }
+  </style>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -15,6 +60,7 @@
   <link rel="apple-touch-icon" href="assets/img/favicon.png" />
 </head>
 <body>
+  <div class="promo-bar">🚀 <strong>Launch offer</strong> — Studio <b class="amt">฿&thinsp;790</b> &amp; 1-bedroom <b class="amt">฿&thinsp;1,090</b> to celebrate our opening <span class="promo-bar-sub">· for a limited time</span></div>
   <!-- SVG icon sprite -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5"/><path d="M6 10v9h12v-9"/></symbol>
@@ -133,39 +179,34 @@
     <div class="container">
       <div class="section-head">
         <p class="eyebrow">What we do</p>
-        <h2>Cleaning services for every kind of home</h2>
-        <p class="section-sub">From a weekly tidy to a full deep clean before guests arrive — pick what fits your life by the coast.</p>
+        <h2>Our services</h2>
+        <p class="section-sub">Rolling out step by step across Hua Hin — from condo cleans to keeping an eye on your property while you're away.</p>
       </div>
       <div class="grid services-grid">
         <article class="card service">
           <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-home" /></svg></div>
-          <h3>Regular home cleaning</h3>
-          <p>Weekly, bi-weekly or monthly visits to keep your condo or villa fresh. Same trusted cleaner each time.</p>
-        </article>
-        <article class="card service">
-          <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-sparkle" /></svg></div>
-          <h3>Deep cleaning</h3>
-          <p>Top-to-bottom detail: behind appliances, inside cupboards, limescale, fans and aircon grilles.</p>
-        </article>
-        <article class="card service">
-          <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-bed" /></svg></div>
-          <h3>Holiday rental turnover</h3>
-          <p>Fast, reliable changeovers for Airbnb &amp; villa rentals — linens, restock and a guest-ready finish.</p>
-        </article>
-        <article class="card service">
-          <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-box" /></svg></div>
-          <h3>Move-in / move-out</h3>
-          <p>Leaving or arriving? We hand back a sparkling property and help you get your deposit back.</p>
+          <h3>Condo cleaning</h3>
+          <p>Standard cleans by size — floors, bathroom, kitchen, dusting and accessible interior windows.</p>
         </article>
         <article class="card service">
           <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-building" /></svg></div>
-          <h3>Office &amp; commercial</h3>
-          <p>Shops, offices and small businesses cleaned out of hours so your team starts the day fresh.</p>
+          <h3>Villa cleaning</h3>
+          <p>Full cleaning for larger homes — priced by villa size, from small to luxury.</p>
         </article>
         <article class="card service">
-          <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-wind" /></svg></div>
-          <h3>Aircon &amp; add-ons</h3>
-          <p>Aircon cleaning, ironing, laundry, windows and post-renovation cleanups on request.</p>
+          <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-shield" /></svg></div>
+          <h3>Property inspection</h3>
+          <p>A single visit with photos plus water, electricity and general condition checks.</p>
+        </article>
+        <article class="card service">
+          <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-key" /></svg></div>
+          <h3>House watching</h3>
+          <p>Regular visits while you're away — photo report, general check and problem flagging.</p>
+        </article>
+        <article class="card service">
+          <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-bed" /></svg></div>
+          <h3>Airbnb support</h3>
+          <p>Reliable check-in / check-out handling for your short-stay guests, with photos on request.</p>
         </article>
       </div>
     </div>
@@ -257,45 +298,108 @@
       <div class="section-head">
         <p class="eyebrow">Pricing</p>
         <h2>Simple, honest pricing</h2>
-        <p class="section-sub">Indicative rates in Thai Baht. Every home is different — your final quote is free and tailored.</p>
+        <p class="section-sub">Prices in Thai Baht. Every home is different — your final quote is always free.</p>
       </div>
-      <div class="grid pricing-grid">
-        <article class="card price">
-          <h3>Regular clean</h3>
-          <p class="price-tag"><span class="price-from">Starting from</span>฿<span>500</span><small>/ visit*</small></p>
-          <ul>
-            <li>Studio / 1-bed condo</li>
-            <li>2–3 hours, single cleaner</li>
-            <li>Weekly &amp; monthly discounts</li>
-            <li>Same cleaner each visit</li>
-          </ul>
-          <a href="#quote-form" class="btn btn-block btn-ghost">Get a quote</a>
-        </article>
-        <article class="card price price-featured">
-          <span class="price-badge">Most popular</span>
-          <h3>Deep clean</h3>
-          <p class="price-tag"><span class="price-from">Starting from</span>฿<span>1,800</span><small>/ visit*</small></p>
-          <ul>
-            <li>2–3 bedroom villa / house</li>
-            <li>Team of 2, half-day</li>
-            <li>Inside cupboards &amp; appliances</li>
-            <li>Limescale, fans &amp; detail work</li>
-          </ul>
-          <a href="#quote-form" class="btn btn-block">Get a quote</a>
-        </article>
-        <article class="card price">
-          <h3>Rental turnover</h3>
-          <p class="price-tag"><span class="price-from">Starting from</span>฿<span>900</span><small>/ changeover*</small></p>
-          <ul>
-            <li>Guest-ready finish</li>
-            <li>Linen change &amp; restock</li>
-            <li>Flexible, last-minute slots</li>
-            <li>Damage &amp; inventory check</li>
-          </ul>
-          <a href="#quote-form" class="btn btn-block btn-ghost">Get a quote</a>
-        </article>
+
+      <div class="ptabs">
+        <div class="ptab-btns" role="tablist">
+          <button class="ptab-btn is-active" data-ptab="condo" role="tab" aria-selected="true">Condo</button>
+          <button class="ptab-btn" data-ptab="villa" role="tab" aria-selected="false">Villa</button>
+          <button class="ptab-btn" data-ptab="mgmt" role="tab" aria-selected="false">Property management</button>
+        </div>
+
+        <!-- Condo -->
+        <div class="ptab-panel is-active" data-ppanel="condo" role="tabpanel">
+          <div class="grid pricing-grid">
+            <article class="card price">
+              <span class="price-badge">Launch price</span>
+              <h3>Studio</h3>
+              <p class="card-sz">up to 30 m²</p>
+              <p class="price-tag"><span class="price-from">Per clean</span>฿<span>790</span><small>/ clean</small></p>
+              <p class="launch-line">Normally <s>฿990</s></p>
+              <a href="#contact" class="btn btn-block">Get a quote</a>
+            </article>
+            <article class="card price">
+              <span class="price-badge">Launch price</span>
+              <h3>1 bedroom</h3>
+              <p class="card-sz">30–50 m²</p>
+              <p class="price-tag"><span class="price-from">Per clean</span>฿<span>1,090</span><small>/ clean</small></p>
+              <p class="launch-line">Normally <s>฿1,290</s></p>
+              <a href="#contact" class="btn btn-block">Get a quote</a>
+            </article>
+            <article class="card price">
+              <h3>2 bedrooms</h3>
+              <p class="card-sz">50–80 m²</p>
+              <p class="price-tag"><span class="price-from">Per clean</span>฿<span>1,790</span><small>/ clean</small></p>
+              <p class="launch-line muted-note">Over 80 m²? Just ask</p>
+              <a href="#contact" class="btn btn-block btn-ghost">Get a quote</a>
+            </article>
+          </div>
+          <p class="group-note"><span class="star">*</span> Every clean includes floors · bathroom · kitchen · dusting · accessible interior windows.</p>
+        </div>
+
+        <!-- Villa -->
+        <div class="ptab-panel" data-ppanel="villa" role="tabpanel" hidden>
+          <div class="grid pricing-grid">
+            <article class="card price">
+              <h3>Small villa</h3>
+              <p class="card-sz">up to 100 m²</p>
+              <p class="price-tag"><span class="price-from">Per clean</span>฿<span>2,500</span><small>/ clean</small></p>
+              <a href="#contact" class="btn btn-block btn-ghost">Get a quote</a>
+            </article>
+            <article class="card price">
+              <h3>Medium villa</h3>
+              <p class="card-sz">100–200 m²</p>
+              <p class="price-tag"><span class="price-from">Per clean</span>฿<span>3,500</span><small>/ clean</small></p>
+              <a href="#contact" class="btn btn-block btn-ghost">Get a quote</a>
+            </article>
+            <article class="card price">
+              <h3>Large villa</h3>
+              <p class="card-sz">200–300 m²</p>
+              <p class="price-tag"><span class="price-from">Per clean</span>฿<span>4,500</span><small>/ clean</small></p>
+              <p class="launch-line muted-note">Luxury villa? Just ask</p>
+              <a href="#contact" class="btn btn-block btn-ghost">Get a quote</a>
+            </article>
+          </div>
+        </div>
+
+        <!-- Property management -->
+        <div class="ptab-panel" data-ppanel="mgmt" role="tabpanel" hidden>
+          <div class="grid pricing-grid">
+            <article class="card price">
+              <h3>Property inspection</h3>
+              <p class="price-tag"><span class="price-from">Flat rate</span>฿<span>500</span><small>/ visit</small></p>
+              <ul>
+                <li>One visit + photo report</li>
+                <li>Water &amp; electricity check</li>
+                <li>General condition check</li>
+              </ul>
+              <a href="#contact" class="btn btn-block btn-ghost">Get a quote</a>
+            </article>
+            <article class="card price">
+              <h3>House watching</h3>
+              <p class="price-tag"><span class="price-from">From</span>฿<span>1,000</span><small>/ month</small></p>
+              <ul class="rate-rows">
+                <li><span>1 visit / month</span><span class="amt">฿1,000</span></li>
+                <li><span>2 visits / month</span><span class="amt">฿1,500</span></li>
+                <li><span>4 visits / month</span><span class="amt">฿2,500</span></li>
+              </ul>
+              <a href="#contact" class="btn btn-block btn-ghost">Get a quote</a>
+            </article>
+            <article class="card price">
+              <h3>Airbnb support</h3>
+              <p class="price-tag"><span class="price-from">From</span>฿<span>500</span><small>/ turnover</small></p>
+              <ul class="rate-rows">
+                <li><span>Check-in / check-out</span><span class="amt">฿500</span></li>
+                <li><span>With photos</span><span class="amt">฿700</span></li>
+              </ul>
+              <a href="#contact" class="btn btn-block btn-ghost">Get a quote</a>
+            </article>
+          </div>
+        </div>
       </div>
-      <p class="price-foot">*Indicative starting prices. Final rate depends on size, condition and frequency. Quotes are always free and with no obligation.</p>
+
+      <p class="price-foot">Final rate depends on size and condition. Message us and we'll confirm an exact, no-obligation price — usually within minutes on WhatsApp.</p>
     </div>
   </section>
 
@@ -451,5 +555,22 @@
   </div>
 
   <script src="assets/script.js"></script>
+  <script>
+    // Pricing tabs
+    document.querySelectorAll('.ptab-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var key = btn.dataset.ptab;
+        document.querySelectorAll('.ptab-btn').forEach(function (b) {
+          var on = b === btn;
+          b.classList.toggle('is-active', on);
+          b.setAttribute('aria-selected', on ? 'true' : 'false');
+        });
+        document.querySelectorAll('.ptab-panel').forEach(function (p) {
+          p.hidden = p.dataset.ppanel !== key;
+          p.classList.toggle('is-active', p.dataset.ppanel === key);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
