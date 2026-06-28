@@ -132,11 +132,11 @@ a:focus-visible, .btn:focus-visible, button:focus-visible { outline-offset: 3px;
   padding: 6px; border: 1px solid var(--line);
 }
 .hero-mascot {
-  position: absolute; top: 0; right: -10px; width: 210px; height: auto;
+  position: absolute; top: 0; right: -8px; width: 140px; height: auto;
   transform: translateY(-70%); pointer-events: none;
 }
 @media (max-width: 920px) {
-  .hero-mascot { width: 150px; right: 6px; transform: translateY(-62%); }
+  .hero-mascot { width: 105px; right: 6px; transform: translateY(-62%); }
 }
 .hero-card-inner { padding: 24px; }
 .hero-card h3 { font-size: 1.3rem; color: var(--teal-900); }
