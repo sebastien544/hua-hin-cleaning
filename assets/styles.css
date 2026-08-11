@@ -444,12 +444,17 @@ textarea { resize: vertical; }
   .gallery-wide { grid-column: span 1; }
 }
 @media (max-width: 720px) {
+  /* visibility, not just transform: a menu moved off-screen stays focusable and
+     stays in the accessibility tree, so keyboard users would tab through seven
+     invisible links while aria-expanded said the menu was closed. visibility
+     transitions discretely, so the slide-out animation still plays. */
   .nav-links {
     position: fixed; inset: 72px 0 auto 0; flex-direction: column; align-items: stretch;
     background: #fff; border-bottom: 1px solid var(--line); padding: 16px 22px; gap: .4rem;
-    transform: translateY(-130%); transition: transform .25s ease; box-shadow: var(--shadow);
+    transform: translateY(-130%); visibility: hidden;
+    transition: transform .25s ease, visibility .25s ease; box-shadow: var(--shadow);
   }
-  .nav-links.open { transform: translateY(0); }
+  .nav-links.open { transform: translateY(0); visibility: visible; }
   .nav-links a { padding: .7rem .2rem; }
   .nav-links .btn { margin-top: .4rem; }
   .nav-toggle { display: flex; }
