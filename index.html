@@ -67,10 +67,10 @@
     .launch-line.muted-note { color: var(--muted); font-weight: 500; }
     .launch-line.muted-note a { color: var(--teal-700); font-weight: 600; }
   </style>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@500,700,800&display=swap" rel="stylesheet" />
+  <!-- Fonts are self-hosted (@font-face in styles.css). Preload the two used
+       above the fold so they start before the stylesheet finishes parsing. -->
+  <link rel="preload" href="assets/fonts/jakarta-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/cabinet-700.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="stylesheet" href="assets/styles.css" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png" />
   <link rel="icon" type="image/png" sizes="180x180" href="assets/img/favicon.png" />

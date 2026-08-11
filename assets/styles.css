@@ -1,4 +1,32 @@
 /* ===== Sparkle Hua Hin — styles ===== */
+
+/* Self-hosted fonts — no third-party request, no external point of failure.
+   Plus Jakarta Sans (SIL OFL) is variable: one file covers 200-800.
+   Cabinet Grotesk (Fontshare, ITF FFL) ships as three static weights. */
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('fonts/jakarta-latin.woff2') format('woff2');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('fonts/cabinet-500.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('fonts/cabinet-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* No 800 weight: the display font is only ever set at 500, 600 and 700, and 600
+   resolves to the 700 file. The old Fontshare request asked for 800 unused. */
+
 :root {
   --teal-900: #06343a;
   --teal-700: #0d6470;
