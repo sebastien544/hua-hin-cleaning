@@ -28,12 +28,7 @@
   <meta name="twitter:image:alt" content="Coastal villa with pool, maintained by Sparkle Hua Hin" />
 
   <style>
-    /* page-specific helpers (launch bar, pricing tabs) */
-    .promo-bar { background: linear-gradient(90deg, #ffb547, #f5a028); color: #06343a; text-align: center;
-      padding: .72rem 1.4rem; font-size: .92rem; font-weight: 600; line-height: 1.5; letter-spacing: .01em; }
-    .promo-bar strong { font-weight: 800; }
-    .promo-bar .amt { font-weight: 800; white-space: nowrap; margin: 0 .12em; letter-spacing: .02em; }
-    .promo-bar-sub { opacity: .8; white-space: nowrap; }
+    /* page-specific helpers (pricing tabs) */
     .coming-soon { display: inline-block; margin-left: .4rem; font-size: .66rem; font-weight: 800; letter-spacing: .04em;
       text-transform: uppercase; color: var(--teal-700); background: var(--teal-50); border: 1px solid var(--teal-300);
       padding: .15em .55em; border-radius: 999px; vertical-align: middle; }
@@ -54,8 +49,8 @@
     .price-group::after { content: ""; flex: 1; height: 1px; background: var(--line); }
     .price-group.second { margin-top: 40px; }
     .price .card-sz { color: var(--muted); font-size: .9rem; margin-top: -.35rem; }
-    .launch-line { color: var(--amber2, #f5a028); font-weight: 700; font-size: .9rem; margin: -.6rem 0 1rem; }
-    .launch-line s { color: var(--muted); font-weight: 500; }
+    /* only ever used with .muted-note now that the launch offer is gone */
+    .launch-line { color: var(--muted); font-weight: 500; font-size: .9rem; margin: -.6rem 0 1rem; }
     /* pricing tabs */
     .ptab-btns { display: inline-flex; gap: .3rem; padding: .35rem; margin: 0 auto 28px; background: #fff;
       border: 1px solid var(--line); border-radius: 999px; box-shadow: var(--shadow-sm); }
@@ -128,12 +123,12 @@
         {
           "@type": "Offer",
           "itemOffered": { "@type": "Service", "name": "Condo cleaning — studio, up to 30 m²" },
-          "price": "790", "priceCurrency": "THB"
+          "price": "990", "priceCurrency": "THB"
         },
         {
           "@type": "Offer",
           "itemOffered": { "@type": "Service", "name": "Condo cleaning — 1 bedroom, 30–50 m²" },
-          "price": "1090", "priceCurrency": "THB"
+          "price": "1290", "priceCurrency": "THB"
         },
         {
           "@type": "Offer",
@@ -185,7 +180,6 @@
   </script>
 </head>
 <body>
-  <div class="promo-bar">🚀 <strong>Launch offer</strong> — Studio <b class="amt">฿&thinsp;790</b> &amp; 1-bedroom <b class="amt">฿&thinsp;1,090</b> to celebrate our opening <span class="promo-bar-sub">· for a limited time</span></div>
   <!-- SVG icon sprite -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5"/><path d="M6 10v9h12v-9"/></symbol>
@@ -437,20 +431,16 @@
         <div class="ptab-panel is-active" data-ppanel="condo" role="tabpanel">
           <div class="grid pricing-grid">
             <article class="card price">
-              <span class="price-badge">Launch price</span>
               <h3>Studio</h3>
               <p class="card-sz">up to 30 m²</p>
-              <p class="price-tag"><span class="price-from">Per clean</span>฿<span>790</span><small>/ clean</small></p>
-              <p class="launch-line">Normally <s>฿990</s></p>
-              <a href="#contact" class="btn btn-block">Get a quote</a>
+              <p class="price-tag"><span class="price-from">Per clean</span>฿<span>990</span><small>/ clean</small></p>
+              <a href="#contact" class="btn btn-block btn-ghost">Get a quote</a>
             </article>
             <article class="card price">
-              <span class="price-badge">Launch price</span>
               <h3>1 bedroom</h3>
               <p class="card-sz">30–50 m²</p>
-              <p class="price-tag"><span class="price-from">Per clean</span>฿<span>1,090</span><small>/ clean</small></p>
-              <p class="launch-line">Normally <s>฿1,290</s></p>
-              <a href="#contact" class="btn btn-block">Get a quote</a>
+              <p class="price-tag"><span class="price-from">Per clean</span>฿<span>1,290</span><small>/ clean</small></p>
+              <a href="#contact" class="btn btn-block btn-ghost">Get a quote</a>
             </article>
             <article class="card price">
               <h3>2 bedrooms</h3>
