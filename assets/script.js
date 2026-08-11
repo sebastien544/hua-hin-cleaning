@@ -73,15 +73,48 @@
     revealTargets.forEach(function (el) { el.classList.add('in'); });
   }
 
-  // Demo form handling (no backend — shows confirmation)
+  // Contact form → Make webhook (honeypot + time-trap), inline confirmation
   var contactForm = document.querySelector('[data-contact-form]');
   if (contactForm) {
+    var WEBHOOK = 'https://hook.eu1.make.com/9djgmkfap4lqotr9tx4d5tj9shyy96w8';
+    var loadedAt = Date.now();
+    var lang = (document.documentElement.lang || 'en').slice(0, 2);
+    var T = lang === 'fr'
+      ? { sending: 'Envoi…', sent: 'Demande envoyée ✓' }
+      : { sending: 'Sending…', sent: 'Request sent ✓' };
+    var leadSource = new URLSearchParams(location.search).get('source') || 'sparkle';
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
+      if (!contactForm.reportValidity()) return;
+      var el = contactForm.elements;
       var note = contactForm.querySelector('[data-form-note]');
-      if (note) note.hidden = false;
       var btn = contactForm.querySelector('button[type="submit"]');
-      if (btn) { btn.textContent = 'Request sent ✓'; btn.disabled = true; }
+      function val(n) { return el[n] ? el[n].value.trim() : ''; }
+      function done() {
+        if (note) note.hidden = false;
+        if (btn) { btn.textContent = T.sent; btn.disabled = true; }
+      }
+      // bot traps: honeypot filled or submitted too fast → skip send, still confirm
+      if (val('website') || Date.now() - loadedAt < 2000) { done(); return; }
+      if (btn) { btn.disabled = true; btn.textContent = T.sending; }
+      var payload = {
+        brand: 'Sparkle',
+        name: val('name'),
+        phone: val('contact'),
+        subject: val('service'),
+        area: val('area'),
+        message: val('message'),
+        email: '',
+        lang: lang,
+        lead_source: leadSource,
+        website: '',
+        form_dwell_ms: Date.now() - loadedAt
+      };
+      fetch(WEBHOOK, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch(function () {}).finally(function () { contactForm.reset(); done(); });
     });
   }
 })();

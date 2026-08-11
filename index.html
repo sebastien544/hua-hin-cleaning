@@ -463,6 +463,9 @@
         </ul>
       </div>
       <form class="contact-form card" id="quote-form" data-contact-form>
+        <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+          <label>Do not fill <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+        </div>
         <div class="form-row">
           <label><span>Name</span><input type="text" name="name" required /></label>
           <label><span>Phone / WhatsApp</span><input type="text" name="contact" required /></label>
@@ -471,11 +474,11 @@
           <label><span>Service</span>
             <select name="service" required>
               <option value="">Choose…</option>
-              <option>Regular home cleaning</option>
-              <option>Deep cleaning</option>
-              <option>Holiday rental turnover</option>
-              <option>Move-in / move-out</option>
-              <option>Office / commercial</option>
+              <option>Condo cleaning</option>
+              <option>Villa cleaning</option>
+              <option>Property inspection</option>
+              <option>House watching</option>
+              <option>Airbnb support</option>
               <option>Other / not sure</option>
             </select>
           </label>
@@ -485,7 +488,7 @@
           <textarea name="message" rows="4" placeholder="Size, bedrooms, cleaning frequency, anything special…"></textarea>
         </label>
         <button type="submit" class="btn btn-lg btn-block">Send request</button>
-        <p class="form-note" data-form-note hidden>Thanks! This demo form doesn't send yet — connect it to email, LINE or a form service to go live.</p>
+        <p class="form-note" data-form-note hidden>Thanks! Your request has been sent — we'll get back to you shortly on WhatsApp.</p>
       </form>
     </div>
   </section>
