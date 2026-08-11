@@ -304,15 +304,6 @@ textarea { resize: vertical; }
 .price ul li { padding-left: 1.6rem; position: relative; color: var(--muted); font-size: .96rem; }
 .price ul li::before { content: "✦"; position: absolute; left: 0; color: var(--teal-300); }
 .price .btn { margin-top: auto; }
-.price-featured {
-  border: 2px solid var(--teal-300);
-  box-shadow: var(--shadow); transform: translateY(-8px);
-}
-.price-badge {
-  position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
-  background: var(--sun); color: var(--teal-900); font-weight: 800; font-size: .78rem;
-  padding: .4em 1em; border-radius: 999px; box-shadow: var(--shadow-sm);
-}
 .price-foot { text-align: center; color: var(--muted); font-size: .88rem; margin-top: 1.8rem; }
 
 /* Gallery */
@@ -449,7 +440,6 @@ textarea { resize: vertical; }
   .hero-card { max-width: 440px; }
   .why-inner, .contact-inner { grid-template-columns: 1fr; gap: 36px; }
   .services-grid, .pricing-grid, .reviews-grid { grid-template-columns: 1fr 1fr; }
-  .price-featured { transform: none; }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
   .gallery-tall { grid-row: span 1; }
   .gallery-wide { grid-column: span 1; }

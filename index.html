@@ -29,25 +29,15 @@
 
   <style>
     /* page-specific helpers (pricing tabs) */
-    .coming-soon { display: inline-block; margin-left: .4rem; font-size: .66rem; font-weight: 800; letter-spacing: .04em;
-      text-transform: uppercase; color: var(--teal-700); background: var(--teal-50); border: 1px solid var(--teal-300);
-      padding: .15em .55em; border-radius: 999px; vertical-align: middle; }
-    .service.is-soon { opacity: .72; }
     .rate-rows { list-style: none; display: grid; gap: .55rem; margin: .4rem 0 1.4rem; }
     .price .rate-rows li { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline;
       padding: 0 0 .55rem; border-bottom: 1px dashed var(--line); color: var(--teal-900); font-size: .98rem; }
     .price .rate-rows li::before { content: none; }
     .price .rate-rows li:last-child { border-bottom: 0; padding-bottom: 0; }
     .rate-rows .amt { font-family: var(--font-display); font-weight: 700; color: var(--teal-700); white-space: nowrap; }
-    .rate-rows .sz { color: var(--muted); font-size: .82rem; display: block; }
-    .incl-label { font-weight: 700; color: var(--teal-900); font-size: .88rem; margin: .2rem 0 .6rem; }
     /* equal-height pricing cards (3 across, two rows) */
     #pricing .pricing-grid { align-items: stretch; }
     #pricing .price .btn { margin-top: auto; }
-    .price-group { font-family: var(--font-display); font-weight: 700; font-size: 1.18rem; color: var(--teal-900);
-      margin: 6px 0 16px; display: flex; align-items: center; gap: .6rem; }
-    .price-group::after { content: ""; flex: 1; height: 1px; background: var(--line); }
-    .price-group.second { margin-top: 40px; }
     .price .card-sz { color: var(--muted); font-size: .9rem; margin-top: -.35rem; }
     /* only ever used with .muted-note now that the launch offer is gone */
     .launch-line { color: var(--muted); font-weight: 500; font-size: .9rem; margin: -.6rem 0 1rem; }
@@ -423,14 +413,18 @@
       </div>
 
       <div class="ptabs">
-        <div class="ptab-btns" role="tablist">
-          <button class="ptab-btn is-active" data-ptab="condo" role="tab" aria-selected="true">Condo</button>
-          <button class="ptab-btn" data-ptab="villa" role="tab" aria-selected="false">Villa</button>
-          <button class="ptab-btn" data-ptab="mgmt" role="tab" aria-selected="false">Property management</button>
+        <div class="ptab-btns" role="tablist" aria-label="Pricing categories">
+          <button class="ptab-btn is-active" type="button" data-ptab="condo" role="tab"
+                  id="ptab-condo" aria-controls="ppanel-condo" aria-selected="true" tabindex="0">Condo</button>
+          <button class="ptab-btn" type="button" data-ptab="villa" role="tab"
+                  id="ptab-villa" aria-controls="ppanel-villa" aria-selected="false" tabindex="-1">Villa</button>
+          <button class="ptab-btn" type="button" data-ptab="mgmt" role="tab"
+                  id="ptab-mgmt" aria-controls="ppanel-mgmt" aria-selected="false" tabindex="-1">Property management</button>
         </div>
 
         <!-- Condo -->
-        <div class="ptab-panel is-active" data-ppanel="condo" role="tabpanel">
+        <div class="ptab-panel is-active" data-ppanel="condo" role="tabpanel"
+             id="ppanel-condo" aria-labelledby="ptab-condo">
           <div class="grid pricing-grid">
             <article class="card price">
               <h3>Studio</h3>
@@ -456,7 +450,8 @@
         </div>
 
         <!-- Villa -->
-        <div class="ptab-panel" data-ppanel="villa" role="tabpanel" hidden>
+        <div class="ptab-panel" data-ppanel="villa" role="tabpanel" hidden
+             id="ppanel-villa" aria-labelledby="ptab-villa">
           <div class="grid pricing-grid">
             <article class="card price">
               <h3>Small villa</h3>
@@ -481,7 +476,8 @@
         </div>
 
         <!-- Property management -->
-        <div class="ptab-panel" data-ppanel="mgmt" role="tabpanel" hidden>
+        <div class="ptab-panel" data-ppanel="mgmt" role="tabpanel" hidden
+             id="ppanel-mgmt" aria-labelledby="ptab-mgmt">
           <div class="grid pricing-grid">
             <article class="card price">
               <h3>Property inspection</h3>
@@ -679,21 +675,46 @@
 
   <script src="assets/script.js"></script>
   <script>
-    // Pricing tabs
-    document.querySelectorAll('.ptab-btn').forEach(function (btn) {
-      btn.addEventListener('click', function () {
-        var key = btn.dataset.ptab;
-        document.querySelectorAll('.ptab-btn').forEach(function (b) {
-          var on = b === btn;
-          b.classList.toggle('is-active', on);
-          b.setAttribute('aria-selected', on ? 'true' : 'false');
+    // Pricing tabs — ARIA tabs pattern with roving tabindex.
+    // Only the selected tab is in the tab order; arrows move between tabs,
+    // so a keyboard user reaches the panels in three keystrokes, not eight.
+    (function () {
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('.ptab-btn'));
+      var panels = Array.prototype.slice.call(document.querySelectorAll('.ptab-panel'));
+      if (!tabs.length) return;
+
+      function select(tab, moveFocus) {
+        tabs.forEach(function (t) {
+          var on = t === tab;
+          t.classList.toggle('is-active', on);
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+          t.tabIndex = on ? 0 : -1;
         });
-        document.querySelectorAll('.ptab-panel').forEach(function (p) {
-          p.hidden = p.dataset.ppanel !== key;
-          p.classList.toggle('is-active', p.dataset.ppanel === key);
+        panels.forEach(function (p) {
+          var on = p.dataset.ppanel === tab.dataset.ptab;
+          p.hidden = !on;
+          p.classList.toggle('is-active', on);
         });
+        if (moveFocus) tab.focus();
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () { select(tab, false); });
       });
-    });
+
+      document.querySelector('.ptab-btns').addEventListener('keydown', function (e) {
+        var i = tabs.indexOf(document.activeElement);
+        if (i < 0) return;
+        var next =
+          e.key === 'ArrowRight' ? (i + 1) % tabs.length :
+          e.key === 'ArrowLeft'  ? (i - 1 + tabs.length) % tabs.length :
+          e.key === 'Home'       ? 0 :
+          e.key === 'End'        ? tabs.length - 1 : -1;
+        if (next < 0) return;
+        e.preventDefault();
+        select(tabs[next], true);
+      });
+    })();
   </script>
 </body>
 </html>
