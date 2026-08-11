@@ -86,7 +86,9 @@ a:focus-visible, .btn:focus-visible, button:focus-visible { outline-offset: 3px;
 }
 .brand-accent { color: var(--teal-500); }
 .nav-links { display: flex; align-items: center; gap: 1.6rem; }
-.nav-links a { font-weight: 600; color: var(--ink); font-size: .96rem; transition: color .15s; }
+/* :not(.btn) — otherwise this rule outweighs .btn and .btn-sm, and the header
+   CTA renders with ink-coloured text at the wrong size and weight */
+.nav-links a:not(.btn) { font-weight: 600; color: var(--ink); font-size: .96rem; transition: color .15s; }
 .nav-links a:not(.btn):hover { color: var(--teal-500); }
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 8px; }
 .nav-toggle span { width: 24px; height: 2.5px; background: var(--ink); border-radius: 2px; transition: .25s; }
