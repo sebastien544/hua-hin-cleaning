@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sparkle.smartview-huahin.com/sitemap.xml
