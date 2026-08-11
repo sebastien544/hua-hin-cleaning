@@ -99,6 +99,17 @@ a:focus-visible, .btn:focus-visible, button:focus-visible { outline-offset: 3px;
 .btn-ghost:hover { background: var(--teal-50); color: var(--teal-900); }
 
 /* ===== Header ===== */
+/* Skip link — off-screen until focused. z-index above the sticky header (50),
+   which would otherwise cover it when it slides down. */
+.skip-link {
+  position: fixed; left: 50%; top: 0; z-index: 100;
+  transform: translate(-50%, -130%);
+  background: var(--teal-700); color: #fff; font-weight: 700; font-size: .95rem;
+  padding: .75em 1.5em; border-radius: 0 0 12px 12px; box-shadow: var(--shadow-sm);
+  transition: transform .18s ease;
+}
+.skip-link:focus { transform: translate(-50%, 0); }
+
 .site-header {
   position: sticky; top: 0; z-index: 50;
   background: rgba(255, 255, 255, .85);
@@ -505,4 +516,5 @@ textarea { resize: vertical; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
+  .skip-link { transition: none; }
 }

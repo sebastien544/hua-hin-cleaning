@@ -180,6 +180,7 @@
   </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <!-- SVG icon sprite -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
     <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5"/><path d="M6 10v9h12v-9"/></symbol>
@@ -222,6 +223,7 @@
     </div>
   </header>
 
+  <main id="main">
   <!-- Hero -->
   <section class="hero">
     <div class="container hero-inner">
@@ -582,8 +584,8 @@
           <label>Do not fill <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
         </div>
         <div class="form-row">
-          <label><span>Name</span><input type="text" name="name" required /></label>
-          <label><span>Phone / WhatsApp</span><input type="text" name="contact" required /></label>
+          <label><span>Name</span><input type="text" name="name" autocomplete="name" required /></label>
+          <label><span>Phone / WhatsApp</span><input type="tel" name="contact" autocomplete="tel" inputmode="tel" required /></label>
         </div>
         <div class="form-row">
           <label><span>Service</span>
@@ -597,7 +599,7 @@
               <option>Other / not sure</option>
             </select>
           </label>
-          <label><span>Area</span><input type="text" name="area" placeholder="e.g. Cha-Am" required /></label>
+          <label><span>Area</span><input type="text" name="area" autocomplete="address-level2" placeholder="e.g. Cha-Am" required /></label>
         </div>
         <label><span>Tell us about your place</span>
           <textarea name="message" rows="4" placeholder="Size, bedrooms, cleaning frequency, anything special…"></textarea>
@@ -607,6 +609,8 @@
       </form>
     </div>
   </section>
+
+  </main>
 
   <!-- Footer -->
   <footer class="site-footer">
