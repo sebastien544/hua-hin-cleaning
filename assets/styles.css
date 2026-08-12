@@ -467,9 +467,26 @@ textarea { resize: vertical; }
   background: #fff; color: var(--teal-700); font-weight: 700; font-family: inherit;
   border: 2px solid var(--teal-500); cursor: pointer; padding: .8em 1.25em; border-radius: 999px;
   box-shadow: var(--shadow); font-size: .95rem;
-  transition: transform .15s ease, color .15s ease, border-color .15s ease;
+  transition: transform .15s ease, background .28s ease, color .28s ease, border-color .28s ease;
 }
 .float-toggle:hover { transform: translateY(-3px); color: var(--teal-900); border-color: var(--teal-700); }
+
+/* Tones flip while the widget sits over a .section-dark band. Same outlined
+   pill: the fill matches the ground and the ring does the defining, exactly as
+   it does on light. teal-300 ring reaches 6.73:1 there and white text 13.46:1,
+   both stronger than the light-ground pairing. */
+.float-contact.on-dark .float-toggle {
+  background: var(--teal-900);
+  color: #fff;
+  border-color: var(--teal-300);
+}
+.float-contact.on-dark .float-toggle:hover {
+  color: #fff;
+  border-color: var(--teal-50);
+}
+@media (prefers-reduced-motion: reduce) {
+  .float-toggle { transition: none; }
+}
 .float-toggle-close { display: none; }
 .float-contact.open .float-toggle-open { display: none; }
 .float-contact.open .float-toggle-close { display: inline; }

@@ -50,6 +50,12 @@
   // Reveal the floating contact widget once the user scrolls past the hero
   if (floatWrap) {
     var showAfter = 260;
+    // Dark grounds the widget can pass over — the coverage band and the footer,
+    // both --teal-900. Marked with data-dark-ground rather than matched on a
+    // style class, so a new dark surface only has to carry the attribute.
+    // Read once: none of them move.
+    var darkZones = Array.prototype.slice.call(document.querySelectorAll('[data-dark-ground]'));
+
     var syncFloat = function () {
       var show = window.scrollY > showAfter;
       floatWrap.classList.toggle('is-visible', show);
@@ -57,8 +63,27 @@
         floatWrap.classList.remove('open');
         if (floatToggle) floatToggle.setAttribute('aria-expanded', 'false');
       }
+      // Flip the widget's tones while it sits over a dark band. Tested against
+      // the toggle's own midpoint, not the wrapper, so the open menu extending
+      // upward out of the band does not trigger the swap on its own.
+      if (darkZones.length) {
+        var mid = floatToggle.getBoundingClientRect();
+        var y = mid.top + mid.height / 2;
+        var onDark = darkZones.some(function (s) {
+          var b = s.getBoundingClientRect();
+          return b.top <= y && b.bottom >= y;
+        });
+        floatWrap.classList.toggle('on-dark', onDark);
+      }
     };
-    window.addEventListener('scroll', syncFloat, { passive: true });
+
+    var queued = false;
+    window.addEventListener('scroll', function () {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(function () { queued = false; syncFloat(); });
+    }, { passive: true });
+    window.addEventListener('resize', syncFloat, { passive: true });
     syncFloat();
   }
 
