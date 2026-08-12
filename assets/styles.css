@@ -424,12 +424,17 @@ textarea { resize: vertical; }
 .float-call .ico { color: var(--teal-700); }
 .float-toggle-open { display: inline-flex; align-items: center; gap: .45em; }
 .float-toggle .ico { width: 18px; height: 18px; }
+/* Quiet on purpose. This is a utility control that duplicates CTAs already on
+   the page; it used to be the only solid --sun fill on the site, which gave the
+   loudest colour to the least important action. --sun is now reserved for the
+   ✦ brand mark and never used as a fill. */
 .float-toggle {
-  background: var(--sun); color: var(--teal-900); font-weight: 800; font-family: inherit;
-  border: 0; cursor: pointer; padding: .85em 1.3em; border-radius: 999px;
-  box-shadow: var(--shadow); font-size: .95rem; transition: transform .15s;
+  background: #fff; color: var(--teal-700); font-weight: 700; font-family: inherit;
+  border: 1px solid var(--line); cursor: pointer; padding: .85em 1.3em; border-radius: 999px;
+  box-shadow: var(--shadow); font-size: .95rem;
+  transition: transform .15s ease, color .15s ease, border-color .15s ease;
 }
-.float-toggle:hover { transform: translateY(-3px); }
+.float-toggle:hover { transform: translateY(-3px); color: var(--teal-900); border-color: var(--teal-300); }
 .float-toggle-close { display: none; }
 .float-contact.open .float-toggle-open { display: none; }
 .float-contact.open .float-toggle-close { display: inline; }
