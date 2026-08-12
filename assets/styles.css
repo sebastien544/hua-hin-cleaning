@@ -230,6 +230,36 @@ textarea { resize: vertical; }
 /* ===== Sections ===== */
 .section { padding: clamp(56px, 8vw, 96px) 0; }
 .section-alt { background: var(--sand); }
+
+/* One dark band, once. The page alternates white and sand seven times; a single
+   full-bleed dark section is the only tonal break, and it is deliberately not
+   repeated — seven variations would be noise, not rhythm. Move the class to
+   another section to move the accent; nothing here is section-specific. */
+.section-dark {
+  background:
+    radial-gradient(900px 400px at 75% -20%, rgba(95, 198, 210, .22), transparent 65%),
+    var(--teal-900);
+  color: var(--teal-50);
+}
+/* .section-dark .section-head h2, not .section-dark h2 — the latter ties with
+   .section-head h2 on specificity and loses on source order, leaving the
+   heading dark teal on a dark teal ground. */
+.section-dark .section-head h2 { color: #fff; }
+.section-dark .eyebrow { color: var(--teal-300); }
+.section-dark .section-sub { color: rgba(234, 250, 251, .72); }
+.section-dark .areas-list li {
+  background: rgba(255, 255, 255, .06);
+  border-color: rgba(95, 198, 210, .35);
+  color: var(--teal-50);
+  box-shadow: none;
+}
+.section-dark .areas-list li:hover {
+  background: rgba(255, 255, 255, .12);
+  border-color: var(--teal-300);
+  color: #fff;
+}
+.section-dark .areas-note { color: rgba(234, 250, 251, .72); }
+.section-dark .areas-note a { color: var(--teal-300); }
 .section-head { max-width: 640px; margin: 0 auto 3rem; text-align: center; }
 .section-head h2, .why-copy h2, .contact-copy h2 {
   font-size: clamp(1.9rem, 3.6vw, 2.7rem); letter-spacing: -.01em; color: var(--teal-900);
@@ -429,12 +459,12 @@ textarea { resize: vertical; }
    loudest colour to the least important action. --sun is now reserved for the
    ✦ brand mark and never used as a fill. */
 .float-toggle {
-  background: #fff; color: var(--teal-700); font-weight: 700; font-family: inherit;
-  border: 1px solid var(--line); cursor: pointer; padding: .85em 1.3em; border-radius: 999px;
+  background: var(--teal-900); color: #fff; font-weight: 700; font-family: inherit;
+  border: 0; cursor: pointer; padding: .85em 1.3em; border-radius: 999px;
   box-shadow: var(--shadow); font-size: .95rem;
-  transition: transform .15s ease, color .15s ease, border-color .15s ease;
+  transition: transform .15s ease, background .15s ease;
 }
-.float-toggle:hover { transform: translateY(-3px); color: var(--teal-900); border-color: var(--teal-300); }
+.float-toggle:hover { transform: translateY(-3px); background: var(--teal-700); }
 .float-toggle-close { display: none; }
 .float-contact.open .float-toggle-open { display: none; }
 .float-contact.open .float-toggle-close { display: inline; }
