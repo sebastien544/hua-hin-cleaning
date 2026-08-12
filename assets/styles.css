@@ -458,13 +458,18 @@ textarea { resize: vertical; }
    the page; it used to be the only solid --sun fill on the site, which gave the
    loudest colour to the least important action. --sun is now reserved for the
    ✦ brand mark and never used as a fill. */
+/* Same white family as the .float-item pills it opens, and no solid fill — the
+   page keeps exactly two of those. What it needed was a defined edge: the old
+   --line border sat at 1.2:1 on white, which is no edge at all. teal-500 gives
+   3.81:1; teal-300 would match .btn-ghost but only reaches 2.0:1, too soft for
+   an element that floats over whatever section happens to be behind it. */
 .float-toggle {
-  background: var(--teal-900); color: #fff; font-weight: 700; font-family: inherit;
-  border: 0; cursor: pointer; padding: .85em 1.3em; border-radius: 999px;
+  background: #fff; color: var(--teal-700); font-weight: 700; font-family: inherit;
+  border: 2px solid var(--teal-500); cursor: pointer; padding: .8em 1.25em; border-radius: 999px;
   box-shadow: var(--shadow); font-size: .95rem;
-  transition: transform .15s ease, background .15s ease;
+  transition: transform .15s ease, color .15s ease, border-color .15s ease;
 }
-.float-toggle:hover { transform: translateY(-3px); background: var(--teal-700); }
+.float-toggle:hover { transform: translateY(-3px); color: var(--teal-900); border-color: var(--teal-700); }
 .float-toggle-close { display: none; }
 .float-contact.open .float-toggle-open { display: none; }
 .float-contact.open .float-toggle-close { display: inline; }
