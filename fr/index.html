@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ménage et conciergerie à Hua Hin — Sparkle Hua Hin</title>
+  <meta name="description" content="Ménage de condos et villas, inspection, gardiennage et rotations Airbnb à Hua Hin, Cha-Am et Pranburi. Équipes vérifiées et assurées, interlocuteur francophone. Devis gratuit sur WhatsApp." />
+  <link rel="canonical" href="https://sparkle.smartview-huahin.com/fr/" />
+  <link rel="alternate" hreflang="en" href="https://sparkle.smartview-huahin.com/" />
+  <link rel="alternate" hreflang="fr" href="https://sparkle.smartview-huahin.com/fr/" />
+  <link rel="alternate" hreflang="x-default" href="https://sparkle.smartview-huahin.com/" />
+  <meta name="theme-color" content="#0e7c86" />
+
+  <!-- Open Graph — WhatsApp, Facebook, LINE, Messenger -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Sparkle Hua Hin" />
+  <meta property="og:url" content="https://sparkle.smartview-huahin.com/fr/" />
+  <meta property="og:title" content="Ménage et conciergerie à Hua Hin — Sparkle Hua Hin" />
+  <meta property="og:description" content="Ménage de condos et villas, inspections, gardiennage et rotations Airbnb sur Hua Hin, Cha-Am et Pranburi. Équipes vérifiées, francophones. Devis gratuit sur WhatsApp." />
+  <meta property="og:image" content="https://sparkle.smartview-huahin.com/assets/img/villa.jpg" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="800" />
+  <meta property="og:image:alt" content="Villa avec piscine en bord de mer, entretenue par Sparkle Hua Hin" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ménage et conciergerie à Hua Hin — Sparkle Hua Hin" />
+  <meta name="twitter:description" content="Ménage de condos et villas, inspections, gardiennage et rotations Airbnb sur Hua Hin, Cha-Am et Pranburi. Équipes vérifiées, francophones. Devis gratuit sur WhatsApp." />
+  <meta name="twitter:image" content="https://sparkle.smartview-huahin.com/assets/img/villa.jpg" />
+  <meta name="twitter:image:alt" content="Villa avec piscine en bord de mer, entretenue par Sparkle Hua Hin" />
+
+  <style>
+    /* page-specific helpers (pricing tabs) */
+    .rate-rows { list-style: none; display: grid; gap: .55rem; margin: .4rem 0 1.4rem; }
+    .price .rate-rows li { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline;
+      padding: 0 0 .55rem; border-bottom: 1px dashed var(--line); color: var(--teal-900); font-size: .98rem; }
+    .price .rate-rows li::before { content: none; }
+    .price .rate-rows li:last-child { border-bottom: 0; padding-bottom: 0; }
+    .rate-rows .amt { font-family: var(--font-display); font-weight: 700; color: var(--teal-700); white-space: nowrap; }
+    /* equal-height pricing cards (3 across, two rows) */
+    #pricing .pricing-grid { align-items: stretch; }
+    #pricing .price .btn { margin-top: auto; }
+    .price .card-sz { color: var(--muted); font-size: .9rem; margin-top: -.35rem; }
+    /* only ever used with .muted-note now that the launch offer is gone */
+    .launch-line { color: var(--muted); font-weight: 500; font-size: .9rem; margin: -.6rem 0 1rem; }
+    /* pricing tabs */
+    .ptab-btns { display: inline-flex; gap: .3rem; padding: .35rem; margin: 0 auto 28px; background: #fff;
+      border: 1px solid var(--line); border-radius: 999px; box-shadow: var(--shadow-sm); }
+    .ptabs { text-align: center; }
+    .ptab-panel { text-align: left; }
+    .ptab-btn { border: 0; cursor: pointer; font-family: inherit; font-weight: 700; font-size: .95rem;
+      color: var(--teal-700); background: transparent; padding: .6em 1.3em; border-radius: 999px; transition: all .15s; }
+    .ptab-btn:hover { color: var(--teal-900); }
+    .ptab-btn.is-active { background: var(--teal-500); color: #fff; }
+    @media (max-width: 560px) { .ptab-btns { display: flex; width: 100%; } .ptab-btn { flex: 1; padding: .6em .4em; font-size: .85rem; } }
+    .group-note { color: var(--muted); font-size: .95rem; margin: 6px 0 0; }
+    .group-note a { color: var(--teal-700); font-weight: 600; }
+    .group-note .star { color: var(--teal-500); font-weight: 700; }
+    .launch-line.muted-note { color: var(--muted); font-weight: 500; }
+    .launch-line.muted-note a { color: var(--teal-700); font-weight: 600; }
+  </style>
+  <!-- Fonts are self-hosted (@font-face in styles.css). Preload the two used
+       above the fold so they start before the stylesheet finishes parsing. -->
+  <link rel="preload" href="/assets/fonts/jakarta-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="/assets/fonts/cabinet-700.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="180x180" href="/assets/img/favicon.png" />
+  <link rel="apple-touch-icon" href="/assets/img/favicon.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": "https://sparkle.smartview-huahin.com/fr/#webpage",
+    "url": "https://sparkle.smartview-huahin.com/fr/",
+    "inLanguage": "fr",
+    "name": "Ménage et conciergerie à Hua Hin — Sparkle Hua Hin",
+    "description": "Ménage de condos et villas, inspection, gardiennage et rotations Airbnb à Hua Hin, Cha-Am et Pranburi.",
+    "primaryImageOfPage": {
+      "@type": "ImageObject",
+      "url": "https://sparkle.smartview-huahin.com/assets/img/villa.jpg"
+    },
+    "about": { "@id": "https://sparkle.smartview-huahin.com/#business" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+  <!-- SVG icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 11.5 12 5l8 6.5"/><path d="M6 10v9h12v-9"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 4c.7 4.6 1.7 5.6 6 6.3-4.3.7-5.3 1.7-6 6.3-.7-4.6-1.7-5.6-6-6.3 4.3-.7 5.3-1.7 6-6.3Z"/></symbol>
+    <symbol id="i-bed" viewBox="0 0 24 24"><path d="M4 18V9"/><path d="M4 13h13a3 3 0 0 1 3 3v2"/><path d="M4 18h16"/><path d="M8 13v-2a1 1 0 0 1 1-1h3a1 1 0 0 1 1 1v2"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 7.5 12 4l8.5 3.5v9L12 20l-8.5-3.5Z"/><path d="m3.5 7.5 8.5 3.6 8.5-3.6"/><path d="M12 11.1V20"/></symbol>
+    <symbol id="i-building" viewBox="0 0 24 24"><path d="M5 20V5a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v15"/><path d="M13 9h5a1 1 0 0 1 1 1v10"/><path d="M3 20h18"/><path d="M8 8h2M8 12h2M8 16h2"/></symbol>
+    <symbol id="i-wind" viewBox="0 0 24 24"><path d="M3 8h10a2.5 2.5 0 1 0-2.4-3.2"/><path d="M3 16h13a2.5 2.5 0 1 1-2.4 3.2"/><path d="M3 12h17"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M5 19c0-7 5-12 14-12 0 9-5 13-11 13a4 4 0 0 1-3-1Z"/><path d="M5 19c3-5 6-7 10-8"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4.5l3 2"/></symbol>
+    <symbol id="i-key" viewBox="0 0 24 24"><circle cx="9" cy="9" r="4"/><path d="m11.8 11.8 7.2 7.2"/><path d="m16.4 14.6-1.6 1.6 2 2 1.6-1.6"/></symbol>
+    <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M4 12h16"/><path d="M12 4c2.5 2.2 2.5 13.8 0 16M12 4c-2.5 2.2-2.5 13.8 0 16"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 4 5 6.5v5.5c0 4 3 6.8 7 8 4-1.2 7-4 7-8V6.5Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-chat" viewBox="0 0 24 24"><path d="M20 6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2v3l4-3h6a2 2 0 0 0 2-2Z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M6 4h2.5l1.3 4-1.8 1.4a10 10 0 0 0 4.6 4.6l1.4-1.8 4 1.3V16a2 2 0 0 1-2 2A13 13 0 0 1 4 6a2 2 0 0 1 2-2Z"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="2"/><path d="m4 7 8 5.5L20 7"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 20s-6-5-6-10a6 6 0 0 1 12 0c0 5-6 10-6 10Z"/><circle cx="12" cy="10" r="2.2"/></symbol>
+    <symbol id="i-spark-solid" viewBox="0 0 24 24"><path d="M12 0c1 7.5 3.5 10 11 11-7.5 1-10 3.5-11 11-1-7.5-3.5-10-11-11 7.5-1 10-3.5 11-11Z"/></symbol>
+  </svg>
+
+  <!-- Header -->
+  <header class="site-header" id="top">
+    <div class="container nav">
+      <a href="#top" class="brand">
+        <span class="brand-mark">✦</span>
+        <span class="brand-text">Sparkle<span class="brand-accent"> Hua Hin</span></span>
+      </a>
+      <nav class="nav-links" id="primary-nav" aria-label="Principale">
+        <a href="#services">Prestations</a>
+        <a href="#why">Pourquoi nous</a>
+        <a href="#gallery">Réalisations</a>
+        <a href="#areas">Zones</a>
+        <a href="#pricing">Tarifs</a>
+        <a href="#reviews">Avis</a>
+        <a href="#contact" class="btn btn-sm btn-ghost">Devis gratuit</a>
+      </nav>
+      <div class="lang-switch">
+        <a href="/" hreflang="en" lang="en">EN</a>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href="/fr/" hreflang="fr" lang="fr" aria-current="page">FR</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <p class="eyebrow">Hua Hin · Cha-Am · Pranburi · Khao Tao</p>
+        <h1>
+          <span class="line"><span>Nous faisons briller</span></span>
+          <span class="line"><span>votre intérieur.</span></span>
+        </h1>
+        <span class="title-spark" aria-hidden="true">
+          <svg class="spark-row" viewBox="0 0 92 24">
+            <use href="#i-spark-solid" x="0" y="7" width="11" height="11" />
+            <use href="#i-spark-solid" x="19" y="1" width="20" height="20" />
+            <use href="#i-spark-solid" x="48" y="9" width="8" height="8" />
+          </svg>
+        </span>
+        <p class="lead">
+          Ménage professionnel et fiable pour condos, villas et locations saisonnières,
+          sur Hua Hin et toute la côte. Équipes vérifiées et assurées, parlant
+          français, anglais, thaï et chinois. Produits écologiques. Sans complication.
+        </p>
+        <div class="hero-actions">
+          <a href="https://wa.me/66821266654?text=Bonjour%20Sparkle%20Hua%20Hin%2C%20je%20souhaiterais%20un%20devis%20pour%20du%20m%C3%A9nage." class="btn btn-lg btn-wa" target="_blank" rel="noopener">
+            <svg class="ico" aria-hidden="true"><use href="#i-chat" /></svg> Discuter sur WhatsApp
+          </a>
+        </div>
+        <ul class="hero-trust">
+          <li><svg class="ico" aria-hidden="true"><use href="#i-shield" /></svg> Équipes vérifiées et assurées</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-globe" /></svg> Français, anglais, thaï et chinois</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-clock" /></svg> Disponibilité dans la semaine</li>
+        </ul>
+      </div>
+      <aside class="hero-card">
+        <img class="hero-mascot" src="/assets/img/mascot.webp" width="320" height="366" alt="" aria-hidden="true" />
+        <div class="hero-card-inner">
+          <h3>Votre devis gratuit, en 3 étapes</h3>
+          <ol class="quote-steps">
+            <li>
+              <span class="step-num">01</span>
+              <span class="step-txt"><strong>Parlez-nous de votre logement</strong>Surface, quartier et fréquence souhaitée. Une minute suffit.</span>
+            </li>
+            <li>
+              <span class="step-num">02</span>
+              <span class="step-txt"><strong>Nous répondons dans la journée</strong>Un prix clair et adapté, sans engagement.</span>
+            </li>
+            <li>
+              <span class="step-num">03</span>
+              <span class="step-txt"><strong>Réservez votre premier passage</strong>Créneaux disponibles dans la semaine, 7 jours sur 7.</span>
+            </li>
+          </ol>
+          <a href="#contact" class="btn btn-block btn-ghost">Demander mon devis gratuit</a>
+          <p class="hero-card-note">Sans engagement · réponse sur WhatsApp</p>
+        </div>
+      </aside>
+    </div>
+    <div class="hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0 48c180 28 360 28 540 8s360-44 540-40 240 36 360 44v30H0Z" /></svg>
+    </div>
+  </section>
+
+  <!-- Trusted by / badges -->
+  <section class="badges">
+    <div class="container badges-row">
+      <span><svg class="ico" aria-hidden="true"><use href="#i-leaf" /></svg> Produits écologiques</span>
+      <span><svg class="ico" aria-hidden="true"><use href="#i-clock" /></svg> Disponibilité dans la semaine</span>
+      <span><svg class="ico" aria-hidden="true"><use href="#i-key" /></svg> Service de garde de clés</span>
+      <span><svg class="ico" aria-hidden="true"><use href="#i-globe" /></svg> Français · English · ไทย · 中文</span>
+      <span><svg class="ico" aria-hidden="true"><use href="#i-shield" /></svg> Satisfaction garantie</span>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Ce que nous faisons</p>
+        <h2>Nos prestations</h2>
+        <p class="section-sub">Déployées progressivement sur Hua Hin — du ménage de condo à la surveillance de votre bien pendant vos absences.</p>
+      </div>
+      <div class="grid services-grid">
+        <article class="card service">
+          <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-home" /></svg></div>
+          <h3>Ménage de condo</h3>
+          <p>Prestation calibrée selon la surface : sols, salle de bain, cuisine, dépoussiérage et vitres intérieures accessibles.</p>
+        </article>
+        <article class="card service">
+          <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-building" /></svg></div>
+          <h3>Ménage de villa</h3>
+          <p>Prestation complète pour les grandes surfaces, tarifée selon la taille de la villa, de la plus modeste à la plus vaste.</p>
+        </article>
+        <article class="card service">
+          <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-shield" /></svg></div>
+          <h3>Inspection de bien</h3>
+          <p>Une visite ponctuelle avec rapport photo, relevés d'eau et d'électricité et vérification de l'état général.</p>
+        </article>
+        <article class="card service">
+          <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-key" /></svg></div>
+          <h3>Gardiennage à distance</h3>
+          <p>Des passages réguliers pendant votre absence : rapport photo, vérification générale et signalement immédiat de tout problème.</p>
+        </article>
+        <article class="card service">
+          <div class="service-ico"><svg class="ico" aria-hidden="true"><use href="#i-bed" /></svg></div>
+          <h3>Support Airbnb</h3>
+          <p>Gestion fiable des arrivées et des départs de vos voyageurs, avec rapport photo sur demande.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why us -->
+  <section class="section section-alt" id="why">
+    <div class="container why-inner">
+      <div class="why-copy">
+        <p class="eyebrow">Pourquoi Sparkle Hua Hin</p>
+        <h2>La tranquillité d'esprit, dans votre langue</h2>
+        <p class="section-sub">Nous avons créé Sparkle à Hua Hin pour offrir aux résidents et aux propriétaires de résidences secondaires un service de ménage sur lequel on peut réellement compter — y compris quand on se trouve à l'autre bout du monde.</p>
+        <ul class="check-list">
+          <li><strong>Équipes vérifiées et assurées.</strong> Personnel dont les antécédents sont contrôlés, et responsabilité civile professionnelle couvrant les dommages.</li>
+          <li><strong>Un service, pas une personne.</strong> En cas d'absence ou de congé, nous assurons le remplacement. Votre logement est entretenu sans interruption, et vous avez toujours quelqu'un à qui vous adresser.</li>
+          <li><strong>Vous restez informé.</strong> Réservation, report et paiement se font par WhatsApp, en français.</li>
+          <li><strong>Vos clés en confiance.</strong> Conservation sécurisée des clés pour les propriétaires absents et les locations.</li>
+          <li><strong>Respectueux de votre intérieur.</strong> Produits peu toxiques, sans danger pour les enfants et les animaux, en standard.</li>
+          <li><strong>Ponctuels et souples.</strong> Créneaux dans la semaine et arrivées à l'heure, systématiquement.</li>
+        </ul>
+        <a href="#contact" class="btn btn-ghost">Nous contacter</a>
+      </div>
+      <div class="why-stats">
+        <div class="stat"><span class="stat-num">500+</span><span class="stat-label">Logements et locations entretenus</span></div>
+        <div class="stat"><span class="stat-num">4,9 ★</span><span class="stat-label">Note moyenne de nos clients</span></div>
+        <div class="stat"><span class="stat-num">25+</span><span class="stat-label">Intervenants formés</span></div>
+        <div class="stat"><span class="stat-num">7 j/7</span><span class="stat-label">Y compris les jours fériés</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section class="section" id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Nos réalisations</p>
+        <h2>Un résultat qui se voit</h2>
+        <p class="section-sub">Un aperçu des maisons, condos et villas dont nous prenons soin sur toute la côte.</p>
+      </div>
+      <div class="grid gallery-grid">
+        <figure class="gallery-item gallery-tall">
+          <img src="/assets/img/living.jpg" width="900" height="1200" alt="Séjour lumineux et impeccable nettoyé par Sparkle Hua Hin" loading="lazy" />
+          <figcaption>Séjours</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="/assets/img/bathroom.jpg" width="900" height="700" alt="Salle de bain parfaitement propre" loading="lazy" />
+          <figcaption>Salles de bain</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <img src="/assets/img/kitchen.jpg" width="900" height="700" alt="Cuisine propre et rangée" loading="lazy" />
+          <figcaption>Cuisines</figcaption>
+        </figure>
+        <figure class="gallery-item gallery-wide">
+          <img src="/assets/img/villa.jpg" width="1600" height="800" alt="Villa avec piscine en bord de mer entretenue par Sparkle Hua Hin" loading="lazy" />
+          <figcaption>Villas et locations saisonnières</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Areas -->
+  <section class="section section-dark" id="areas" data-dark-ground>
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Couverture</p>
+        <h2>Nous intervenons sur Hua Hin et toute la côte</h2>
+        <p class="section-sub">Si vous vous situez entre Cha-Am et Pranburi, nous couvrons très probablement votre secteur.</p>
+      </div>
+      <div class="areas-wrap">
+        <ul class="areas-list">
+          <li>Hua Hin centre</li>
+          <li>Khao Takiab</li>
+          <li>Khao Tao</li>
+          <li>Cha-Am</li>
+          <li>Pranburi</li>
+          <li>Hua Hin Soi 88 à 112</li>
+          <li>Black Mountain</li>
+          <li>Palm Hills</li>
+          <li>Banyan</li>
+          <li>Khao Kalok</li>
+        </ul>
+        <p class="areas-note">Votre quartier n'est pas dans la liste ? <a href="#contact">Écrivez-nous</a> — nous nous déplaçons régulièrement un peu plus loin pour nos clients réguliers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Tarifs</p>
+        <h2>Des prix simples et transparents</h2>
+        <p class="section-sub">Prix en bahts thaïlandais. Chaque logement étant différent, votre devis reste toujours gratuit.</p>
+      </div>
+
+      <div class="ptabs">
+        <div class="ptab-btns" role="tablist" aria-label="Catégories de tarifs">
+          <button class="ptab-btn is-active" type="button" data-ptab="condo" role="tab"
+                  id="ptab-condo" aria-controls="ppanel-condo" aria-selected="true" tabindex="0">Condo</button>
+          <button class="ptab-btn" type="button" data-ptab="villa" role="tab"
+                  id="ptab-villa" aria-controls="ppanel-villa" aria-selected="false" tabindex="-1">Villa</button>
+          <button class="ptab-btn" type="button" data-ptab="mgmt" role="tab"
+                  id="ptab-mgmt" aria-controls="ppanel-mgmt" aria-selected="false" tabindex="-1">Gestion de bien</button>
+        </div>
+
+        <!-- Condo -->
+        <div class="ptab-panel is-active" data-ppanel="condo" role="tabpanel"
+             id="ppanel-condo" aria-labelledby="ptab-condo">
+          <div class="grid pricing-grid">
+            <article class="card price">
+              <h3>Studio</h3>
+              <p class="card-sz">jusqu'à 30 m²</p>
+              <p class="price-tag"><span class="price-from">Par passage</span>฿<span>990</span><small>/ passage</small></p>
+              <a href="#contact" class="btn btn-block btn-ghost">Devis gratuit</a>
+            </article>
+            <article class="card price">
+              <h3>1 chambre</h3>
+              <p class="card-sz">30 à 50 m²</p>
+              <p class="price-tag"><span class="price-from">Par passage</span>฿<span>1 290</span><small>/ passage</small></p>
+              <a href="#contact" class="btn btn-block btn-ghost">Devis gratuit</a>
+            </article>
+            <article class="card price">
+              <h3>2 chambres</h3>
+              <p class="card-sz">50 à 80 m²</p>
+              <p class="price-tag"><span class="price-from">Par passage</span>฿<span>1 790</span><small>/ passage</small></p>
+              <p class="launch-line muted-note">Plus de 80 m² ? Écrivez-nous</p>
+              <a href="#contact" class="btn btn-block btn-ghost">Devis gratuit</a>
+            </article>
+          </div>
+          <p class="group-note"><span class="star">*</span> Chaque passage comprend les sols, la salle de bain, la cuisine, le dépoussiérage et les vitres intérieures accessibles.</p>
+        </div>
+
+        <!-- Villa -->
+        <div class="ptab-panel" data-ppanel="villa" role="tabpanel" hidden
+             id="ppanel-villa" aria-labelledby="ptab-villa">
+          <div class="grid pricing-grid">
+            <article class="card price">
+              <h3>Petite villa</h3>
+              <p class="card-sz">jusqu'à 100 m²</p>
+              <p class="price-tag"><span class="price-from">Par passage</span>฿<span>2 500</span><small>/ passage</small></p>
+              <a href="#contact" class="btn btn-block btn-ghost">Devis gratuit</a>
+            </article>
+            <article class="card price">
+              <h3>Villa moyenne</h3>
+              <p class="card-sz">100 à 200 m²</p>
+              <p class="price-tag"><span class="price-from">Par passage</span>฿<span>3 500</span><small>/ passage</small></p>
+              <a href="#contact" class="btn btn-block btn-ghost">Devis gratuit</a>
+            </article>
+            <article class="card price">
+              <h3>Grande villa</h3>
+              <p class="card-sz">200 à 300 m²</p>
+              <p class="price-tag"><span class="price-from">Par passage</span>฿<span>4 500</span><small>/ passage</small></p>
+              <p class="launch-line muted-note">Villa d'exception ? Écrivez-nous</p>
+              <a href="#contact" class="btn btn-block btn-ghost">Devis gratuit</a>
+            </article>
+          </div>
+        </div>
+
+        <!-- Property management -->
+        <div class="ptab-panel" data-ppanel="mgmt" role="tabpanel" hidden
+             id="ppanel-mgmt" aria-labelledby="ptab-mgmt">
+          <div class="grid pricing-grid">
+            <article class="card price">
+              <h3>Inspection de bien</h3>
+              <p class="price-tag"><span class="price-from">Forfait</span>฿<span>500</span><small>/ visite</small></p>
+              <ul>
+                <li>Une visite + rapport photo</li>
+                <li>Relevés d'eau et d'électricité</li>
+                <li>Vérification de l'état général</li>
+              </ul>
+              <a href="#contact" class="btn btn-block btn-ghost">Devis gratuit</a>
+            </article>
+            <article class="card price">
+              <h3>Gardiennage à distance</h3>
+              <p class="price-tag"><span class="price-from">À partir de</span>฿<span>1 000</span><small>/ mois</small></p>
+              <ul class="rate-rows">
+                <li><span>1 visite / mois</span><span class="amt">1 000 ฿</span></li>
+                <li><span>2 visites / mois</span><span class="amt">1 500 ฿</span></li>
+                <li><span>4 visites / mois</span><span class="amt">2 500 ฿</span></li>
+              </ul>
+              <a href="#contact" class="btn btn-block btn-ghost">Devis gratuit</a>
+            </article>
+            <article class="card price">
+              <h3>Support Airbnb</h3>
+              <p class="price-tag"><span class="price-from">À partir de</span>฿<span>500</span><small>/ rotation</small></p>
+              <ul class="rate-rows">
+                <li><span>Arrivée / départ</span><span class="amt">500 ฿</span></li>
+                <li><span>Avec photos</span><span class="amt">700 ฿</span></li>
+              </ul>
+              <a href="#contact" class="btn btn-block btn-ghost">Devis gratuit</a>
+            </article>
+          </div>
+        </div>
+      </div>
+
+      <p class="price-foot">Le tarif définitif dépend de la surface et de l'état du logement. Écrivez-nous et nous vous confirmons un prix exact et sans engagement, généralement en quelques minutes sur WhatsApp.</p>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="section section-alt" id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Avis</p>
+        <h2>Ce que disent nos clients</h2>
+        <p class="section-sub">Résidents, retraités et propriétaires de locations sur toute la côte.</p>
+      </div>
+      <div class="grid reviews-grid">
+        <figure class="card review">
+          <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+          <blockquote>« Ils s'occupent de notre villa pendant les six mois que nous passons au Royaume-Uni. Toujours impeccable, toujours à l'heure. Une vraie tranquillité d'esprit. »</blockquote>
+          <figcaption><strong>David et Sue M.</strong> — Propriétaires d'une villa, Pranburi</figcaption>
+        </figure>
+        <figure class="card review">
+          <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+          <blockquote>« Mes voyageurs Airbnb me disent sans arrêt à quel point le logement est propre. L'équipe de rotation ne m'a jamais fait défaut, même sur des réservations de dernière minute. »</blockquote>
+          <figcaption><strong>Niran S.</strong> — Hôte de location, Khao Takiab</figcaption>
+        </figure>
+        <figure class="card review">
+          <div class="stars" aria-label="5 étoiles sur 5">★★★★★</div>
+          <blockquote>« J'ai fait faire un grand ménage avant de quitter mon condo et j'ai récupéré l'intégralité de ma caution. Professionnels, agréables, et ils parlent parfaitement français. »</blockquote>
+          <figcaption><strong>Marie L.</strong> — Locataire de condo, Hua Hin centre</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / CTA -->
+  <section class="section section-cta" id="contact">
+    <div class="container contact-inner">
+      <div class="contact-copy">
+        <p class="eyebrow">Nous contacter</p>
+        <h2>Votre devis gratuit et sans engagement</h2>
+        <p class="section-sub">Envoyez-nous quelques informations et nous vous répondons dans la journée, 7 jours sur 7.</p>
+        <div class="contact-quick">
+          <a class="quick-btn quick-wa" href="https://wa.me/66821266654?text=Bonjour%20Sparkle%20Hua%20Hin%2C%20je%20souhaiterais%20un%20devis%20pour%20du%20m%C3%A9nage." target="_blank" rel="noopener">
+            <span class="quick-ico"><svg class="ico" aria-hidden="true"><use href="#i-chat" /></svg></span>
+            <span class="quick-txt"><strong>WhatsApp</strong><small>Cliquez pour discuter</small></span>
+          </a>
+          <!-- LINE contact hidden for now
+          <a class="quick-btn quick-line" href="https://line.me/R/ti/p/@sparklehuahin" target="_blank" rel="noopener">
+            <span class="quick-ico"><svg class="ico" aria-hidden="true"><use href="#i-chat" /></svg></span>
+            <span class="quick-txt"><strong>LINE</strong><small>@sparklehuahin</small></span>
+          </a>
+          -->
+          <a class="quick-btn quick-call" href="tel:+66821266654">
+            <span class="quick-ico"><svg class="ico" aria-hidden="true"><use href="#i-phone" /></svg></span>
+            <span class="quick-txt"><strong>Nous appeler</strong><small>+66 82 126 6654</small></span>
+          </a>
+        </div>
+        <ul class="contact-list">
+          <!-- Email contact hidden for now
+          <li><svg class="ico" aria-hidden="true"><use href="#i-mail" /></svg> <a href="mailto:hello@sparklehuahin.com">hello@sparklehuahin.com</a></li>
+          -->
+          <li><svg class="ico" aria-hidden="true"><use href="#i-pin" /></svg> Hua Hin, Prachuap Khiri Khan, Thaïlande</li>
+          <li><svg class="ico" aria-hidden="true"><use href="#i-clock" /></svg> Du lundi au dimanche · 8h00 – 18h00 (réponse en quelques minutes sur WhatsApp)</li>
+        </ul>
+      </div>
+      <form class="contact-form card" id="quote-form" data-contact-form>
+        <div aria-hidden="true" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+          <label>Ne pas remplir <input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+        </div>
+        <div class="form-row">
+          <label><span>Nom</span><input type="text" name="name" autocomplete="name" required /></label>
+          <label><span>Téléphone / WhatsApp</span><input type="tel" name="contact" autocomplete="tel" inputmode="tel" required /></label>
+        </div>
+        <div class="form-row">
+          <label><span>Prestation</span>
+            <select name="service" required>
+              <option value="">Choisir…</option>
+              <option value="Condo cleaning">Ménage de condo</option>
+              <option value="Villa cleaning">Ménage de villa</option>
+              <option value="Property inspection">Inspection de bien</option>
+              <option value="House watching">Gardiennage à distance</option>
+              <option value="Airbnb support">Support Airbnb</option>
+              <option value="Other / not sure">Autre / je ne sais pas encore</option>
+            </select>
+          </label>
+          <label><span>Quartier</span><input type="text" name="area" autocomplete="address-level2" placeholder="ex. Cha-Am" required /></label>
+        </div>
+        <label><span>Parlez-nous de votre logement</span>
+          <textarea name="message" rows="4" placeholder="Surface, nombre de chambres, fréquence souhaitée, particularités…"></textarea>
+        </label>
+        <button type="submit" class="btn btn-lg btn-block">Envoyer ma demande</button>
+        <p class="form-note" data-form-note hidden>Merci ! Votre demande a bien été envoyée — nous vous répondons rapidement sur WhatsApp.</p>
+      </form>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" data-dark-ground>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#top" class="brand">
+          <span class="brand-mark">✦</span>
+          <span class="brand-text">Sparkle<span class="brand-accent"> Hua Hin</span></span>
+        </a>
+        <p>Ménage et conciergerie sur Hua Hin, Cha-Am, Pranburi et la côte du golfe de Thaïlande.</p>
+      </div>
+      <div class="footer-cols">
+        <div>
+          <h4>Prestations</h4>
+          <a href="#services">Ménage de condo</a>
+          <a href="#services">Ménage de villa</a>
+          <a href="#services">Inspection de bien</a>
+          <a href="#services">Gardiennage à distance</a>
+          <a href="#services">Support Airbnb</a>
+        </div>
+        <div>
+          <h4>Entreprise</h4>
+          <a href="#why">Pourquoi nous</a>
+          <a href="#areas">Zones</a>
+          <a href="#reviews">Avis</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div>
+          <h4>Nous contacter</h4>
+          <a href="tel:+66821266654">+66 82 126 6654</a>
+          <!-- Email contact hidden for now
+          <a href="mailto:hello@sparklehuahin.com">hello@sparklehuahin.com</a>
+          -->
+          <!-- LINE contact hidden for now
+          <a href="#contact">LINE @sparklehuahin</a>
+          -->
+        </div>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span data-year>2026</span> Sparkle Hua Hin. Tous droits réservés.</p>
+      <p>Réalisé avec soin sur le golfe de Thaïlande.</p>
+    </div>
+  </footer>
+
+  <!-- Floating contact widget -->
+  <div class="float-contact" data-float>
+    <div class="float-menu" data-float-menu>
+      <a class="float-item float-wa" href="https://wa.me/66821266654?text=Bonjour%20Sparkle%20Hua%20Hin%2C%20je%20souhaiterais%20un%20devis%20pour%20du%20m%C3%A9nage." target="_blank" rel="noopener">
+        <svg class="ico" aria-hidden="true"><use href="#i-chat" /></svg> WhatsApp
+      </a>
+      <!-- LINE contact hidden for now
+      <a class="float-item float-line" href="https://line.me/R/ti/p/@sparklehuahin" target="_blank" rel="noopener">
+        <svg class="ico" aria-hidden="true"><use href="#i-chat" /></svg> LINE
+      </a>
+      -->
+      <a class="float-item float-call" href="tel:+66821266654">
+        <svg class="ico" aria-hidden="true"><use href="#i-phone" /></svg> Nous appeler
+      </a>
+    </div>
+    <button class="float-toggle" data-float-toggle aria-expanded="false" aria-label="Nous contacter">
+      <span class="float-toggle-open"><svg class="ico" aria-hidden="true"><use href="#i-chat" /></svg> Contact</span>
+      <span class="float-toggle-close">✕ Fermer</span>
+    </button>
+  </div>
+
+  <script src="/assets/script.js"></script>
+  <script>
+    // Pricing tabs — ARIA tabs pattern with roving tabindex.
+    // Only the selected tab is in the tab order; arrows move between tabs,
+    // so a keyboard user reaches the panels in three keystrokes, not eight.
+    (function () {
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('.ptab-btn'));
+      var panels = Array.prototype.slice.call(document.querySelectorAll('.ptab-panel'));
+      if (!tabs.length) return;
+
+      function select(tab, moveFocus) {
+        tabs.forEach(function (t) {
+          var on = t === tab;
+          t.classList.toggle('is-active', on);
+          t.setAttribute('aria-selected', on ? 'true' : 'false');
+          t.tabIndex = on ? 0 : -1;
+        });
+        panels.forEach(function (p) {
+          var on = p.dataset.ppanel === tab.dataset.ptab;
+          p.hidden = !on;
+          p.classList.toggle('is-active', on);
+        });
+        if (moveFocus) tab.focus();
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () { select(tab, false); });
+      });
+
+      document.querySelector('.ptab-btns').addEventListener('keydown', function (e) {
+        var i = tabs.indexOf(document.activeElement);
+        if (i < 0) return;
+        var next =
+          e.key === 'ArrowRight' ? (i + 1) % tabs.length :
+          e.key === 'ArrowLeft'  ? (i - 1 + tabs.length) % tabs.length :
+          e.key === 'Home'       ? 0 :
+          e.key === 'End'        ? tabs.length - 1 : -1;
+        if (next < 0) return;
+        e.preventDefault();
+        select(tabs[next], true);
+      });
+    })();
+  </script>
+</body>
+</html>
