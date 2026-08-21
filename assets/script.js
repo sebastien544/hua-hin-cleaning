@@ -113,24 +113,53 @@
     var WEBHOOK = 'https://hook.eu1.make.com/9djgmkfap4lqotr9tx4d5tj9shyy96w8';
     var loadedAt = Date.now();
     var lang = (document.documentElement.lang || 'en').slice(0, 2);
+    var WA_LINK = '<a href="https://wa.me/66821266654?text=Hi%20Sparkle%20Hua%20Hin%2C%20I%27d%20like%20a%20cleaning%20quote." target="_blank" rel="noopener">+66 82 126 6654</a>';
     var T = lang === 'fr'
-      ? { sending: 'Envoi…', sent: 'Demande envoyée ✓' }
-      : { sending: 'Sending…', sent: 'Request sent ✓' };
+      ? {
+          sending: 'Envoi…',
+          sent: 'Demande envoyée ✓',
+          error: 'L’envoi a échoué, votre demande n’est pas partie. Écrivez-nous sur WhatsApp au ' + WA_LINK + ' — on répond en quelques minutes.'
+        }
+      : {
+          sending: 'Sending…',
+          sent: 'Request sent ✓',
+          error: 'Something went wrong — your request was not sent. Message us on WhatsApp at ' + WA_LINK + ' — we reply in minutes.'
+        };
     var leadSource = new URLSearchParams(location.search).get('source') || 'sparkle';
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!contactForm.reportValidity()) return;
       var el = contactForm.elements;
       var note = contactForm.querySelector('[data-form-note]');
+      var errNote = contactForm.querySelector('[data-form-error]');
       var btn = contactForm.querySelector('button[type="submit"]');
+      var btnLabel = btn ? btn.textContent : '';
       function val(n) { return el[n] ? el[n].value.trim() : ''; }
       function done() {
         if (note) note.hidden = false;
         if (btn) { btn.textContent = T.sent; btn.disabled = true; }
       }
+      function hideError() { if (errNote) errNote.hidden = true; }
+      // Failure keeps every answer on screen: the visitor retries — or reaches
+      // us on WhatsApp — without retyping a thing.
+      function fail(err) {
+        console.error('[Sparkle] quote form submit failed:', err);
+        if (!errNote) {
+          errNote = document.createElement('p');
+          errNote.className = 'form-note';
+          errNote.setAttribute('data-form-error', '');
+          errNote.setAttribute('role', 'alert');
+          errNote.style.cssText = 'background:#fff6e8;border-color:var(--sun);color:#7a3e00';
+          errNote.innerHTML = T.error;
+          contactForm.appendChild(errNote);
+        }
+        errNote.hidden = false;
+        if (btn) { btn.disabled = false; btn.textContent = btnLabel; }
+      }
       // bot traps: honeypot filled or submitted too fast → skip send, still confirm
       if (val('website') || Date.now() - loadedAt < 2000) { done(); return; }
       if (btn) { btn.disabled = true; btn.textContent = T.sending; }
+      hideError();
       var payload = {
         brand: 'Sparkle',
         name: val('name'),
@@ -148,7 +177,13 @@
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload)
-      }).catch(function () {}).finally(function () { contactForm.reset(); done(); });
+      }).then(function (res) {
+        // A 4xx/5xx still resolves the promise — only res.ok means it landed.
+        if (!res.ok) throw new Error('Webhook responded ' + res.status);
+      }).then(function () {
+        contactForm.reset();
+        done();
+      }, fail);
     });
   }
 })();
