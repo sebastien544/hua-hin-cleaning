@@ -585,14 +585,17 @@
         </div>
         <div class="form-row">
           <label><span>Service</span>
+            <!-- value = stable key sent to Make. Never change it
+                 when rewording the visible label. fr/index.html
+                 must mirror these exact values. -->
             <select name="service" required>
               <option value="">Choose…</option>
-              <option>Condo cleaning</option>
-              <option>Villa cleaning</option>
-              <option>Property inspection</option>
-              <option>House watching</option>
-              <option>Airbnb support</option>
-              <option>Other / not sure</option>
+              <option value="Condo cleaning">Condo cleaning</option>
+              <option value="Villa cleaning">Villa cleaning</option>
+              <option value="Property inspection">Property inspection</option>
+              <option value="House watching">House watching</option>
+              <option value="Airbnb support">Airbnb support</option>
+              <option value="Other / not sure">Other / not sure</option>
             </select>
           </label>
           <label><span>Area</span><input type="text" name="area" autocomplete="address-level2" placeholder="e.g. Cha-Am" required /></label>
