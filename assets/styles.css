@@ -131,6 +131,15 @@ a:focus-visible, .btn:focus-visible, button:focus-visible { outline-offset: 3px;
    CTA renders with ink-coloured text at the wrong size and weight */
 .nav-links a:not(.btn) { font-weight: 600; color: var(--ink); font-size: .96rem; transition: color .15s; }
 .nav-links a:not(.btn):hover { color: var(--teal-500); }
+/* Language switch — a sibling of .nav-links, not a child: on mobile the links
+   collapse into a fixed overlay, and the switch has to stay in the bar. The
+   auto margin keeps the brand left and the rest right, as before. */
+.nav-links { margin-left: auto; }
+.lang-switch { display: flex; align-items: center; gap: .45rem; margin-left: 1.4rem; font-size: .82rem; font-weight: 700; letter-spacing: .05em; }
+.lang-switch a { color: var(--muted); transition: color .15s; }
+.lang-switch a:hover { color: var(--teal-500); }
+.lang-switch a[aria-current="page"] { color: var(--ink); }
+.lang-switch .sep { color: var(--line); }
 .nav-toggle { display: none; flex-direction: column; gap: 5px; background: none; border: 0; cursor: pointer; padding: 8px; }
 .nav-toggle span { width: 24px; height: 2.5px; background: var(--ink); border-radius: 2px; transition: .25s; }
 
