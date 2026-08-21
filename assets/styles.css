@@ -296,7 +296,11 @@ textarea { resize: vertical; }
 .service p { color: var(--muted); margin-top: .5rem; font-size: .97rem; }
 
 /* Why */
-.why-inner { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+/* One column: the stats block that filled the right-hand side was removed —
+   its numbers were invented. A single-column section is honest; inventing
+   new content to fill the grid is how those numbers appeared in the first
+   place. Restore the two columns when there is something real to put there. */
+.why-inner { display: grid; grid-template-columns: 1fr; gap: 56px; align-items: center; }
 .check-list { list-style: none; margin: 1.6rem 0; display: grid; gap: 1rem; }
 .check-list li { position: relative; padding-left: 2rem; color: var(--muted); }
 .check-list li::before {
