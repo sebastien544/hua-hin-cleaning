@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Page not found — Sparkle Hua Hin</title>
+  <title>Page not found · Page introuvable — Sparkle Hua Hin</title>
   <meta name="robots" content="noindex" />
   <!-- root-relative paths: GitHub Pages serves this file at any URL depth -->
   <link rel="stylesheet" href="/assets/styles.css" />
@@ -19,6 +19,10 @@
     .nf .nf-code { font-family: var(--font-display); font-weight: 800; font-size: clamp(3.5rem, 12vw, 6rem);
       line-height: 1; letter-spacing: -.04em; color: var(--teal-300); margin-bottom: .4rem; }
     .nf-actions { display: flex; flex-wrap: wrap; gap: .8rem; }
+    /* Both languages, stacked. GitHub Pages serves this one file for the whole
+       site — a /fr/404.html would simply be ignored — and at the moment someone
+       hits a 404 we do not know which language they were expecting. */
+    .nf-alt { margin-top: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--line); }
   </style>
 </head>
 <body>
@@ -34,22 +38,39 @@
   <main class="section nf">
     <div class="container nf-inner">
       <p class="nf-code">404</p>
-      <h1>This page has been cleaned away.</h1>
-      <p>
-        The link you followed doesn't exist — or doesn't any more. Everything we offer
-        lives on the home page: condo and villa cleaning, inspections, house watching
-        and Airbnb turnovers across Hua Hin, Cha-Am and Pranburi.
-      </p>
-      <div class="nf-actions">
-        <a href="/" class="btn btn-lg">Back to the home page</a>
-        <a href="https://wa.me/66821266654?text=Hi%20Sparkle%20Hua%20Hin%2C%20I%27d%20like%20a%20cleaning%20quote." class="btn btn-lg btn-ghost" target="_blank" rel="noopener">Ask us on WhatsApp</a>
+
+      <div lang="en">
+        <h1>This page has been cleaned away.</h1>
+        <p>
+          The link you followed doesn't exist — or doesn't any more. Everything we offer
+          lives on the home page: condo and villa cleaning, inspections, house watching
+          and Airbnb changeovers across Hua Hin, Cha-Am and Pranburi.
+        </p>
+        <div class="nf-actions">
+          <a href="/" class="btn btn-lg">Back to the home page</a>
+          <a href="https://wa.me/66821266654?text=Hi%20Sparkle%20Hua%20Hin%2C%20I%27d%20like%20a%20cleaning%20quote." class="btn btn-lg btn-ghost" target="_blank" rel="noopener">Ask us on WhatsApp</a>
+        </div>
+      </div>
+
+      <div lang="fr" class="nf-alt">
+        <h1>Cette page a été nettoyée.</h1>
+        <p>
+          Le lien que vous avez suivi n'existe pas, ou n'existe plus. Tout ce que nous
+          proposons se trouve sur la page d'accueil : ménage de condos et de villas,
+          inspections, gardiennage et accueil de voyageurs Airbnb sur Hua Hin, Cha-Am
+          et Pranburi.
+        </p>
+        <div class="nf-actions">
+          <a href="/fr/" class="btn btn-lg">Retour à l'accueil</a>
+          <a href="https://wa.me/66821266654?text=Bonjour%20Sparkle%20Hua%20Hin%2C%20je%20souhaiterais%20un%20devis%20pour%20du%20m%C3%A9nage." class="btn btn-lg btn-ghost" target="_blank" rel="noopener">Nous écrire sur WhatsApp</a>
+        </div>
       </div>
     </div>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-bottom">
-      <p>© <span data-year>2026</span> Sparkle Hua Hin. All rights reserved.</p>
+      <p>© <span data-year>2026</span> Sparkle Hua Hin. All rights reserved. · Tous droits réservés.</p>
       <p>Made with care on the Gulf of Thailand.</p>
     </div>
   </footer>
