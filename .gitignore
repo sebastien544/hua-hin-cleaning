@@ -4,3 +4,11 @@ Thumbs.db
 *~
 .vscode/
 .idea/
+
+# Never published: GitHub Pages serves the whole repository, not just what the
+# sitemap lists. These pages carry pricing grids that compete with the ones in
+# production, and a contact form wired to the same Make webhook — a stray
+# `git add -A` would put them online, crawlable, against the live offer.
+index-draft.html
+index-concierge.html
+marketing/
