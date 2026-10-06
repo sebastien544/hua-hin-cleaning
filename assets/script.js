@@ -113,17 +113,17 @@
     var WEBHOOK = 'https://hook.eu1.make.com/lqzetpuvpg19jhmefodttnhfs58272g1';
     var loadedAt = Date.now();
     var lang = (document.documentElement.lang || 'en').slice(0, 2);
-    var WA_LINK = '<a href="https://wa.me/66943325162?text=Hi%20Sparkle%20Hua%20Hin%2C%20I%27d%20like%20a%20cleaning%20quote." target="_blank" rel="noopener">+66 94 332 5162</a>';
+    var WA_LINK = '<a href="https://wa.me/66943325162?text=Hi%20Sparkle%20Hua%20Hin%2C%20I%27d%20like%20a%20cleaning%20quote." target="_blank" rel="noopener">WhatsApp</a>';
     var T = lang === 'fr'
       ? {
           sending: 'Envoi…',
           sent: 'Demande envoyée ✓',
-          error: 'L’envoi a échoué, votre demande n’est pas partie. Écrivez-nous sur WhatsApp au ' + WA_LINK + ' — on répond en quelques minutes.'
+          error: 'L’envoi a échoué, votre demande n’est pas partie. Écrivez-nous sur ' + WA_LINK + ' — on répond en quelques minutes.'
         }
       : {
           sending: 'Sending…',
           sent: 'Request sent ✓',
-          error: 'Something went wrong — your request was not sent. Message us on WhatsApp at ' + WA_LINK + ' — we reply in minutes.'
+          error: 'Something went wrong — your request was not sent. Message us on ' + WA_LINK + ' — we reply in minutes.'
         };
     var leadSource = new URLSearchParams(location.search).get('source') || 'sparkle';
     contactForm.addEventListener('submit', function (e) {
