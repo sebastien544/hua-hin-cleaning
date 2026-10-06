@@ -283,7 +283,9 @@ textarea { resize: vertical; }
 }
 
 /* Services */
-.services-grid { grid-template-columns: repeat(3, 1fr); }
+/* Two cards while only condo and villa cleaning are promoted: they share the full container width like the other sections.
+   Back to repeat(3, 1fr) when the hidden services return. */
+.services-grid { grid-template-columns: repeat(2, 1fr); }
 .service { transition: transform .18s ease, box-shadow .18s ease; }
 .service:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
 .service-ico {
