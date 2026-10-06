@@ -41,9 +41,12 @@ assets/img/         # gallery photos
 
 ## Quote form
 
-The form posts to a Make webhook shared with `smartview-live`'s contact page.
+The form posts to its own Make webhook, handled by the Make scenario
+"Sparkle - demandes de devis du site", which emails each request to
+sparklehuahin@gmail.com. It is separate from the SmartView scenario: that one
+filters on a visitor email, which this form does not collect.
 Leads are tagged `brand: "Sparkle"` and `lead_source: "sparkle"` (overridable
-with `?source=`) so the scenario can tell them apart. A honeypot field and a
+with `?source=`). A honeypot field and a
 two-second time-trap drop bot submissions without showing an error.
 
 ## Still to do
