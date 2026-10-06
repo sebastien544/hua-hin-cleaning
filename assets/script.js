@@ -113,7 +113,7 @@
     var WEBHOOK = 'https://hook.eu1.make.com/9djgmkfap4lqotr9tx4d5tj9shyy96w8';
     var loadedAt = Date.now();
     var lang = (document.documentElement.lang || 'en').slice(0, 2);
-    var WA_LINK = '<a href="https://wa.me/66821266654?text=Hi%20Sparkle%20Hua%20Hin%2C%20I%27d%20like%20a%20cleaning%20quote." target="_blank" rel="noopener">+66 82 126 6654</a>';
+    var WA_LINK = '<a href="https://wa.me/66943325162?text=Hi%20Sparkle%20Hua%20Hin%2C%20I%27d%20like%20a%20cleaning%20quote." target="_blank" rel="noopener">+66 94 332 5162</a>';
     var T = lang === 'fr'
       ? {
           sending: 'Envoi…',
