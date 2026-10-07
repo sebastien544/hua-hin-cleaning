@@ -3,7 +3,7 @@
 Landing page for a professional cleaning service on the Gulf coast of Thailand
 (Hua Hin, Cha-Am, Pranburi). Single-page static site, no build step.
 
-**Live site:** https://sparkle.smartview-huahin.com/
+**Live site:** https://sparklehuahin.com/
 
 The custom domain is set in `CNAME`. GitHub Pages redirects
 `sebastien544.github.io/hua-hin-cleaning/` to it, and `index.html` declares the
