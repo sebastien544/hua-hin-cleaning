@@ -148,6 +148,7 @@ a:focus-visible, .btn:focus-visible, button:focus-visible { outline-offset: 3px;
   position: relative;
   background:
     radial-gradient(1200px 500px at 80% -10%, rgba(95, 198, 210, .35), transparent 60%),
+    radial-gradient(640px 320px at 0% 92%, rgba(255, 181, 71, .20), transparent 70%),
     linear-gradient(180deg, var(--teal-50), var(--sand));
   padding: clamp(48px, 7vw, 96px) 0 120px;
   overflow: hidden;
@@ -168,16 +169,30 @@ a:focus-visible, .btn:focus-visible, button:focus-visible { outline-offset: 3px;
   font-weight: 600; color: var(--teal-900);
 }
 .hero-slogan { margin-top: .9rem; font-family: var(--font-display); font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 500; color: var(--teal-700, var(--teal-900)); }
+.hero h1 .hl {
+  width: fit-content; color: var(--teal-500);
+  background: linear-gradient(90deg, var(--teal-700), var(--teal-300));
+  -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+}
 .title-spark { display: block; margin-top: .8rem; }
 .spark-row { width: 92px; height: 24px; color: var(--sun); fill: currentColor; }
 .lead { margin-top: 1.2rem; font-size: 1.12rem; color: var(--muted); max-width: 38ch; }
 .hero-actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-top: 1.8rem; }
 .hero-trust {
-  list-style: none; display: grid; gap: .75rem; margin-top: 2.2rem;
+  list-style: none; display: grid; gap: .65rem; margin-top: 2rem;
   color: var(--ink); font-size: .98rem; font-weight: 600;
 }
-.hero-trust li { display: flex; align-items: center; gap: .7em; }
-.hero-trust .ico { width: 20px; height: 20px; color: var(--teal-500); }
+/* chips: a white pill per promise, each icon on its own tint */
+.hero-trust li {
+  display: flex; align-items: center; gap: .6em; width: fit-content; max-width: 100%;
+  padding: .4em 1.05em .4em .4em; background: #fff; border: 1px solid var(--line);
+  border-radius: 999px; box-shadow: var(--shadow-sm);
+}
+.hero-trust .ico {
+  box-sizing: content-box; width: 18px; height: 18px; padding: 7px; flex: none;
+  border-radius: 50%; background: var(--teal-50); color: var(--teal-700);
+}
+.hero-trust li:nth-child(2) .ico { background: #fff0d2; color: #b86a00; }
 
 .hero-card {
   position: relative;
@@ -190,6 +205,10 @@ a:focus-visible, .btn:focus-visible, button:focus-visible { outline-offset: 3px;
 }
 @media (max-width: 920px) {
   .hero-mascot { width: 105px; right: 6px; transform: translateY(-86%); }
+}
+/* very narrow phones: chips can wrap to two lines, give the mascot a bit more room */
+@media (max-width: 400px) {
+  .hero-card { margin-top: 78px !important; }
 }
 .hero-card-inner { padding: 24px; }
 .hero-card h3 { font-size: 1.3rem; color: var(--teal-900); }
