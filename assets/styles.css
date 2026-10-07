@@ -189,7 +189,7 @@ a:focus-visible, .btn:focus-visible, button:focus-visible { outline-offset: 3px;
   transform: translateY(-70%); pointer-events: none;
 }
 @media (max-width: 920px) {
-  .hero-mascot { width: 105px; right: 6px; transform: translateY(-62%); }
+  .hero-mascot { width: 105px; right: 6px; transform: translateY(-86%); }
 }
 .hero-card-inner { padding: 24px; }
 .hero-card h3 { font-size: 1.3rem; color: var(--teal-900); }
@@ -510,7 +510,8 @@ textarea { resize: vertical; }
 /* ===== Responsive ===== */
 @media (max-width: 920px) {
   .hero-inner { grid-template-columns: 1fr; }
-  .hero-card { max-width: 440px; }
+  /* the mascot sits above the card (~103px): leave it room above, off the trust list and the card title */
+  .hero-card { max-width: 440px; margin-top: 62px; }
   .why-inner, .contact-inner { grid-template-columns: 1fr; gap: 36px; }
   .services-grid, .pricing-grid, .reviews-grid { grid-template-columns: 1fr 1fr; }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
