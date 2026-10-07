@@ -167,6 +167,7 @@ a:focus-visible, .btn:focus-visible, button:focus-visible { outline-offset: 3px;
   font-size: clamp(2.4rem, 5.2vw, 3.8rem); line-height: 1.02; letter-spacing: -.02em;
   font-weight: 600; color: var(--teal-900);
 }
+.hero-slogan { margin-top: .9rem; font-family: var(--font-display); font-size: clamp(1.15rem, 2vw, 1.4rem); font-weight: 500; color: var(--teal-700, var(--teal-900)); }
 .title-spark { display: block; margin-top: .8rem; }
 .spark-row { width: 92px; height: 24px; color: var(--sun); fill: currentColor; }
 .lead { margin-top: 1.2rem; font-size: 1.12rem; color: var(--muted); max-width: 38ch; }
@@ -544,6 +545,7 @@ textarea { resize: vertical; }
 
 @media (prefers-reduced-motion: no-preference) {
   .hero .eyebrow,
+  .hero-slogan,
   .hero .lead,
   .hero-actions,
   .hero-trust li,
@@ -555,6 +557,7 @@ textarea { resize: vertical; }
   .hero h1 .line:nth-child(1) > span { animation: lineUp .85s cubic-bezier(.2,.8,.2,1) .18s forwards; }
   .hero h1 .line:nth-child(2) > span { animation: lineUp .85s cubic-bezier(.2,.8,.2,1) .30s forwards; }
   .title-spark { animation: sparkPop .7s cubic-bezier(.2,.8,.3,1.35) .66s forwards; }
+  .hero-slogan { animation: heroRise .7s cubic-bezier(.22,.7,.2,1) .40s forwards; }
   .hero .lead { animation: heroRise .7s cubic-bezier(.22,.7,.2,1) .46s forwards; }
   .hero-actions { animation: heroRise .7s cubic-bezier(.22,.7,.2,1) .58s forwards; }
   .hero-trust li:nth-child(1) { animation: heroRise .6s cubic-bezier(.22,.7,.2,1) .70s forwards; }
