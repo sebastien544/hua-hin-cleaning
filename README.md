@@ -1,7 +1,7 @@
 # Sparkle Hua Hin — Cleaning Services
 
 Landing page for a professional cleaning service on the Gulf coast of Thailand
-(Hua Hin, Cha-Am, Pranburi). Single-page static site, no build step.
+(Hua Hin). Single-page static site, no build step.
 
 **Live site:** https://sparklehuahin.com/
 
