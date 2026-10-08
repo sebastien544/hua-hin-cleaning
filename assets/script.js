@@ -118,12 +118,12 @@
       ? {
           sending: 'Envoi…',
           sent: 'Demande envoyée ✓',
-          error: 'L’envoi a échoué, votre demande n’est pas partie. Écrivez-nous sur ' + WA_LINK + ' — on répond en quelques minutes.'
+          error: 'L’envoi a échoué, votre demande n’est pas partie. Écrivez-nous sur ' + WA_LINK + '.'
         }
       : {
           sending: 'Sending…',
           sent: 'Request sent ✓',
-          error: 'Something went wrong — your request was not sent. Message us on ' + WA_LINK + ' — we reply in minutes.'
+          error: 'Something went wrong — your request was not sent. Message us on ' + WA_LINK + '.'
         };
     var leadSource = new URLSearchParams(location.search).get('source') || 'sparkle';
     contactForm.addEventListener('submit', function (e) {
